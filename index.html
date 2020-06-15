@@ -20,7 +20,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"double112233.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"double112233.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -102,7 +102,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -132,38 +131,11 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
     </header>
@@ -200,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/" class="post-title-link" itemprop="url">TIOJ-1735</a>
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1176</a>
         </h2>
 
         <div class="post-meta">
@@ -210,14 +182,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-06-14 20:56:54" itemprop="dateCreated datePublished" datetime="2020-06-14T20:56:54Z">2020-06-14</time>
+              <time title="Created: 2018-11-04 15:51:07" itemprop="dateCreated datePublished" datetime="2018-11-04T15:51:07Z">2018-11-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-15 01:24:18" itemprop="dateModified" datetime="2020-06-15T01:24:18Z">2020-06-15</time>
+                <time title="Modified: 2020-06-15 04:10:56" itemprop="dateModified" datetime="2020-06-15T04:10:56Z">2020-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -225,7 +197,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CompetitiveProgramming/" itemprop="url" rel="index"><span itemprop="name">CompetitiveProgramming</span></a>
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
                 </span>
             </span>
 
@@ -234,7 +206,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>493</span>
+              <span>844</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -252,8 +224,558 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="1735-k-口吃子字串"><a href="#1735-k-口吃子字串" class="headerlink" title="1735 . k-口吃子字串"></a>1735 . k-口吃子字串</h1><p>Link：<a href="https://tioj.ck.tp.edu.tw/problems/1735" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1735</a><br>這題還挺有趣的<br>本來想要hash之類的硬做，後來發現我們可以開一個bool array存s[i]==s[i+k]，然後看他有多少段連續的true，而且還可以滾動，雖說經歷了一些唬爛的過程不過可以很輕易的AC</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> k,i,a[<span class="number">100010</span>],c,n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;k)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		<span class="built_in">cin</span>.ignore();</span><br><span class="line">		c=n=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i+k&lt;s.length();i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==s[i+k])&#123;</span><br><span class="line">				n++;</span><br><span class="line">				<span class="keyword">if</span>(n&gt;=k)</span><br><span class="line">					c++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				n=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="1176-Cows"><a href="#1176-Cows" class="headerlink" title="1176 . Cows"></a>1176 . Cows</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1176" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1176</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定一排牛(不是一牛排)每頭牛的高度，牠們只能往右平視或俯視，請問牠們分別能夠看到幾頭牛？<br>(如果兩頭牛的高度一樣，那麼左邊的牛的視野只能看到右邊的牛為止。)</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>據說是某個經典題？</p>
+<p>反正就是對於陣列的每一項，求她右邊第一個大於等於他的數的位置</p>
+<p>方法就是維護一個遞減的stack，每次讀到一個數就看這個數和stack的尾巴誰比較大，如果這個數比較大那麼尾巴對應到的右界就是這個數了</p>
+<p>不過我用vector實作就是了，理由是學姐說過用stack不如用vector，如果看起來不太顯明跟大家說聲抱歉</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,a,arr[<span class="number">1000010</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; c;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a;</span><br><span class="line">	c.push_back(make_pair(a,<span class="number">0</span>));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">		<span class="keyword">while</span>(a&gt;=c.back().first&amp;&amp;!c.empty())&#123;</span><br><span class="line">			arr[c.back().second]=i-c.back().second;</span><br><span class="line">			c.pop_back();</span><br><span class="line">		&#125;</span><br><span class="line">		c.push_back(make_pair(a,i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(!c.empty())&#123;</span><br><span class="line">		arr[c.back().second]=n<span class="number">-1</span>-c.back().second;</span><br><span class="line">		c.pop_back();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1161</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 15:32:04" itemprop="dateCreated datePublished" datetime="2018-11-04T15:32:04Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:46:34" itemprop="dateModified" datetime="2020-06-15T02:46:34Z">2020-06-15</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1161-4-虛擬番茄online"><a href="#1161-4-虛擬番茄online" class="headerlink" title="1161 . 4.虛擬番茄online"></a>1161 . 4.虛擬番茄online</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1161" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1161</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>球主最近被某款剛推出不久的線上遊戲「虛擬蕃茄online」給吸引住了。</p>
+<p>「虛擬蕃茄online」是一個關於人生的遊戲。在人生的路途當中，你必須不斷地學習各種不同的技能，以應付隨時在變化的環境。但是有的時候，你必須擁有一定水準的能力，才能習得該技能。這個時候，你需要的是一個人生顧問(茶)。</p>
+<p>在「虛擬蕃茄online」當中，有一種專門提供諮詢服務的NPsC(誤)。他們是裁決你習得某個技能所須至少具備的「力量點數(strength)」以及「敏捷點數(agility)」，你的力量點數和敏捷點數都必須不小於該數值，才有能力習得該技能。噢，對了，這種NPsC有個特別響亮的名號：「蕃茄諮詢線上裁判-Tomato’s Information Online Judge」。</p>
+<p>球主發現他想要學習的技能總共有$n$個，而每個技能都有所需具備的力量點數$s_i$，以及$a_i$。由於讓兩種技能點數(力量點數以及敏捷點數)分別提升$1$點所需要的時間都是「$1$個蕃茄年」，球主迫不及待地想要知道最少還需要多久就可以學習至少$k$種技巧。你能幫個忙嗎？</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>題意等價於求$(x,y)$滿足座標平面上$(0,0)$到$(x,y)$之間有$\leq k$個點，且$x+y$最小</p>
+<p>這個時候就要請出一個解決二維問題的套路：窮舉一維用資結砸另一維</p>
+<p>這裏我們可以枚舉$x$座標，這時候我們會發現對於所有掃過的點，我們只關心他們之中第$k$小的$y$座標，那就先照$x$座標排序，之後開個max heap的priority_queue，每掃到一個點就把他的$y$座標塞進priority_queue，如果大小超過$k$就把最大的pop掉</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t,n,k,mini;</span><br><span class="line">pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; arr[<span class="number">1000010</span>];</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt;&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span>(;t&gt;<span class="number">0</span>;t--)&#123;</span><br><span class="line">		<span class="keyword">while</span>(!p.empty())	p.pop();</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;arr[i].first&gt;&gt;arr[i].second;</span><br><span class="line">		sort(arr,arr+n);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">			p.push(arr[i].second);</span><br><span class="line">		mini=arr[k<span class="number">-1</span>].first+p.top();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=k;i&lt;n&amp;&amp;i&lt;mini;i++)&#123;</span><br><span class="line">			p.push(arr[i].second);</span><br><span class="line">			p.pop();</span><br><span class="line">			mini=<span class="built_in">min</span>(mini,arr[i].first+p.top());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;mini&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1160</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 14:59:21" itemprop="dateCreated datePublished" datetime="2018-11-04T14:59:21Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:48:04" itemprop="dateModified" datetime="2020-06-15T02:48:04Z">2020-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>670</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1160-3-動態眾數問題"><a href="#1160-3-動態眾數問題" class="headerlink" title="1160 . 3.動態眾數問題"></a>1160 . 3.動態眾數問題</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1160" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1160</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>雖然聖誕節快要到了，但這不是動態種樹問題，而是凍態眾樹問題(眾毆)。</p>
+<p>所謂的眾數(英文叫做mode)，就是指一些數字當中出現頻率最高的數。</p>
+<p>對於已經給定的資料來說，計算眾數所需要的時間基本上是線性的，理論上對各位來說理應相當的簡單。</p>
+<p>現在讓我們考慮一個不斷增加的動態集合(dynamic set)，為了探討眾數的變化情況，我們想要知道每次增加一個數字以後，眾數的個數以及最小的眾數數值。請你寫個程式來達成這個任務吧！</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>想法就是紀錄一個數出現幾次了，因為值域偏大所以用unordered_map</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; p;</span><br><span class="line"><span class="keyword">int</span> a,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;ans;</span><br><span class="line">	p[ans]++;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"1 "</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&amp;&amp;a)&#123;</span><br><span class="line">		p[a]++;</span><br><span class="line">		<span class="keyword">if</span>(p[a]&gt;p[ans]||(p[a]==p[ans]&amp;&amp;a&lt;ans))</span><br><span class="line">			ans=a;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;p[ans]&lt;&lt;<span class="string">' '</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1116</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 14:01:16" itemprop="dateCreated datePublished" datetime="2018-11-04T14:01:16Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:46:18" itemprop="dateModified" datetime="2020-06-15T02:46:18Z">2020-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1116-十字路口行車方向問題"><a href="#1116-十字路口行車方向問題" class="headerlink" title="1116 . 十字路口行車方向問題"></a>1116 . 十字路口行車方向問題</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1116" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1116</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有一個十字路口，如下圖所示，路口周圍的四個路段(甲、乙、丙、丁)可為單向或雙向行車，我們以 “a” 表示單向且行車方向面對路口，”b” 表示單向且行車方向背向路口， “c” 表示雙向行車。當有一車輛由一路段駛向路口時，我們用 A 表其可向左轉，B 表可以向右轉，C 表可以直行。請設計一程式回答以下問題：當給予(亦即輸入)各個路段的行車方向，請回答(亦即輸出)車輛由各路段駛入路口時，其行車方向有哪些選擇。</p>
+<p><img src="/images/TIOJ-1116a.gif" alt=""></p>
+<p>條件限制：<br>1.若一路段為單向行車且其方向為背向路口，則此路段不會有車駛入路口，此時我們以 “X” 作為該路段的輸出。</p>
+<p>2.若車輛由一路段駛入路口時，其沒有行車方向可選擇(亦即直行、左轉、右轉都不可)，此時我們用 “Y” 作為該路段的輸出。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>不知道這題要考什麼@@</p>
+<p>閱讀測驗裸題，反正好好做就沒了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		t.resize(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'b'</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">'X'</span>;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">3</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'A'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">1</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'B'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">2</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'C'</span>);</span><br><span class="line">			<span class="keyword">if</span>(t.empty())</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'Y'</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;t;</span><br><span class="line">		&#125;</span><br><span class="line">		s.push_back(s[<span class="number">0</span>]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">			s.push_back(s[i]);</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">", "</span>;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==<span class="string">'b'</span>)&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'X'</span>;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			t.resize(<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">3</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'A'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">1</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'B'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">2</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'C'</span>);</span><br><span class="line">			<span class="keyword">if</span>(t.empty())</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'Y'</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;t;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1126</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 10:39:12" itemprop="dateCreated datePublished" datetime="2018-11-04T10:39:12Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:46:16" itemprop="dateModified" datetime="2020-06-15T02:46:16Z">2020-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>768</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1126-尋找對稱字串"><a href="#1126-尋找對稱字串" class="headerlink" title="1126 . 尋找對稱字串"></a>1126 . 尋找對稱字串</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1126" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1126</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>若一個字串無論是從左至右讀，或者是從右至左讀，都獲得相同的結果，則我們稱此字串為對稱字串。舉例來說，absba便是一個對稱字串。</p>
+<p>對於任何一個字串而言，該字串可能包含有對稱的部份，稱之為對稱子字串。以字串mississippi為例，此字串有多個對稱子字串，如ississi以及ippi等，且其中以ississi為最長的對稱子字串，其長度為7。</p>
+<p>請寫出一個程式可以找出一字串內的最長對稱子字串之長度。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>看到這題本來想說「喔這就枚舉對稱點嘛」，看到值域「字串長度不超過30」……</p>
+<p>上古時期的北市賽根本水箭龜，暴力都會過= =</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		<span class="keyword">int</span> maxu=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i+maxu;j&lt;s.length();j++)&#123;</span><br><span class="line">				<span class="keyword">bool</span> ok=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=j-i;k++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(s[i+k]!=s[j-k])&#123;</span><br><span class="line">						ok=<span class="literal">false</span>;</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(ok)</span><br><span class="line">					maxu=<span class="built_in">max</span>(maxu,j-i+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;maxu&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1080</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 10:19:10" itemprop="dateCreated datePublished" datetime="2018-11-04T10:19:10Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:46:19" itemprop="dateModified" datetime="2020-06-15T02:46:19Z">2020-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1080-A-逆序數對"><a href="#1080-A-逆序數對" class="headerlink" title="1080 . A.逆序數對"></a>1080 . A.逆序數對</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1080" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1080</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>對一個數列$S$來說，若$S$的第$i$項$s_i$與第$j$項$s_j$符合$s_i&gt;s_j$，並且$i&lt;j$的話，那麼我們說$(i,j)$是一個逆序數對。請問給定$S$，總共有多少個逆序數對呢？</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我不會做逆序數對啦QwQ，聽完DP課之後想要刻mergesort，結果即使看了卦長的模板還是SF……</p>
+<p>最後還是放棄跑來刻值域BIT，反正我的BIT欠缺練習也是真的。然後因為沒看好輸出WA了很多次，但基本上沒什麼問題，BIT威能</p>
+<p>基本上就是離散化之後塞值域BIT，對於每個數先把它塞進去，之後讀他後面有多少數就知道她原數列中他前面有多少數字</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">bit</span>[<span class="number">100010</span>],n,arr[<span class="number">100010</span>],a,c=<span class="number">1</span>;</span><br><span class="line">priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;,<span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;,greater&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(pos&lt;=n)&#123;</span><br><span class="line">		<span class="built_in">bit</span>[pos]++;</span><br><span class="line">		pos+=lowbit(pos);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(pos&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		ans+=<span class="built_in">bit</span>[pos];</span><br><span class="line">		pos-=lowbit(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">			p.push(make_pair(a,i));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			arr[p.top().second]=i;</span><br><span class="line">			p.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="built_in">bit</span>[i]=<span class="number">0</span>;</span><br><span class="line">		a=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			add(arr[i]);</span><br><span class="line">			a+=i-query(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;c&lt;&lt;<span class="string">": "</span>&lt;&lt;a&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">		c++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/" class="post-title-link" itemprop="url">TIOJ-1735</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-10-28 19:25:54" itemprop="dateCreated datePublished" datetime="2018-10-28T19:25:54Z">2018-10-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-15 02:46:46" itemprop="dateModified" datetime="2020-06-15T02:46:46Z">2020-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>794</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1735-k-口吃子字串"><a href="#1735-k-口吃子字串" class="headerlink" title="1735 . k-口吃子字串"></a>1735 . k-口吃子字串</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1735" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1735</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一個$k$-口吃字串就是”某一個長度為$k$的字串重複兩次”，例如 abcdabcd 是一個 $4$-口吃字串，而 aaaaaaaa 也是一個 $4$-口吃字串(aaaa重複兩次)。abcabc, abcdeabcde, aaaaaaa 則都不是 $4$-口吃字串</p>
+<p>對於一個字串 $S$，其中的 “$k$-口吃子字串” 就是一個 $S$ 的子字串, 且他同時也是一個 $k$-口吃字串。子字串在這裡的定義就是 $S$ 的連續一小部份 (也可以是全部)，比方說如果 $S$ 是 abcdefg，則 ab, cdef, abcdefg, g 等等都是 $S$ 的子字串</p>
+<p>給你一個字串 $S$，請回答其中有幾個 “k-口吃子字串”?</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題還挺有趣的</p>
+<p>本來想要hash之類的硬做，後來發現我們可以開一個bool array存s[i]==s[i+k]，然後看他有多少段連續的true，而且還可以滾動，雖說經歷了一些唬爛的過程不過可以很輕易的AC</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> k,i,a[<span class="number">100010</span>],c,n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;k)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		<span class="built_in">cin</span>.ignore();</span><br><span class="line">		c=n=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i+k&lt;s.length();i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==s[i+k])&#123;</span><br><span class="line">				n++;</span><br><span class="line">				<span class="keyword">if</span>(n&gt;=k)</span><br><span class="line">					c++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				n=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;c&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -297,14 +819,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-06-14 20:29:18" itemprop="dateCreated datePublished" datetime="2020-06-14T20:29:18Z">2020-06-14</time>
+              <time title="Created: 2018-10-28 18:58:18" itemprop="dateCreated datePublished" datetime="2018-10-28T18:58:18Z">2018-10-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-15 01:24:20" itemprop="dateModified" datetime="2020-06-15T01:24:20Z">2020-06-15</time>
+                <time title="Modified: 2020-06-15 02:46:41" itemprop="dateModified" datetime="2020-06-15T02:46:41Z">2020-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +834,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CompetitiveProgramming/" itemprop="url" rel="index"><span itemprop="name">CompetitiveProgramming</span></a>
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">競程相關</span></a>
                 </span>
             </span>
 
@@ -321,7 +843,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -339,8 +861,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="1400-神秘的黑盒子"><a href="#1400-神秘的黑盒子" class="headerlink" title="1400 . 神秘的黑盒子"></a>1400 . 神秘的黑盒子</h1><p>Link：<a href="https://tioj.ck.tp.edu.tw/problems/1400" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1400</a><br>這題好可怕= =<br><img src="/images/TIOJ-1400a.png" alt=""><br>我的作法是開一個max heap，維護它的大小是n，那麼get的時候只要取他的top就好了，塞不進去的東西就放進一個min heap。<br>雖說去年就想到這個做法了，可是之前一直用string去吃他的指令然後就大TLE，這次重寫用的是輸入優化，但是因為bug一大堆所以狂吃WA，最後的作法是cin.get()吃指令的第一個字元，cin.ignore()把多的東西拔掉，用原本的cin吃整數。這樣就可以AC了(所以說cin吃string是多慢啊？)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;b;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,n=<span class="number">1</span>,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>.<span class="built_in">get</span>(a))&#123;</span><br><span class="line">		<span class="keyword">switch</span>(a)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'P'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">				s.push(x);</span><br><span class="line">				<span class="keyword">if</span>(s.<span class="built_in">size</span>()&gt;n)&#123;</span><br><span class="line">					b.push(s.top());</span><br><span class="line">					s.pop();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'G'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">if</span>(n&lt;=b.<span class="built_in">size</span>()+s.<span class="built_in">size</span>())&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;s.top()&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">					n++;</span><br><span class="line">					<span class="keyword">if</span>(s.<span class="built_in">size</span>()&lt;n&amp;&amp;!b.empty())&#123;</span><br><span class="line">						s.push(b.top());</span><br><span class="line">						b.pop();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'E'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.<span class="built_in">get</span>(a);</span><br><span class="line">				<span class="keyword">if</span>(a==<span class="string">'N'</span>)</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">while</span>(!b.empty())</span><br><span class="line">					b.pop();</span><br><span class="line">				<span class="keyword">while</span>(!s.empty())</span><br><span class="line">					s.pop();</span><br><span class="line">				n=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="1400-神秘的黑盒子"><a href="#1400-神秘的黑盒子" class="headerlink" title="1400 . 神秘的黑盒子"></a>1400 . 神秘的黑盒子</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1400" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1400</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有一個黑盒子支援 PUSH, GET, EXIT, END四種指令：</p>
+<p>PUSH $x$：將 $x$ 丟入黑盒子之中。</p>
+<p>GET：取出黑盒子當中第 $k$ 小的數字，其中 $k$ 是同一組測試資料中先前呼叫GET成功的次數$+1$，若找不到該數則什麼都不用操作，當作沒事一樣。</p>
+<p>EXIT：換一組測試資料，清空黑盒子。</p>
+<p>END：請結束程式。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題好可怕= =<br><img src="/images/TIOJ-1400a.png" alt=""><br>我的作法是開一個max heap，維護它的大小是n，那麼get的時候只要取他的top就好了，塞不進去的東西就放進一個min heap。</p>
+<p>雖說去年就想到這個做法了，可是之前一直用string去吃他的指令然後就大TLE，這次重寫用的是輸入優化，但是因為bug一大堆所以狂吃WA，最後的作法是cin.get()吃指令的第一個字元，cin.ignore()把多的東西拔掉，用原本的cin吃整數。這樣就可以AC了(所以說cin吃string是多慢啊？)</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;b;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,n=<span class="number">1</span>,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>.<span class="built_in">get</span>(a))&#123;</span><br><span class="line">		<span class="keyword">switch</span>(a)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'P'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">				s.push(x);</span><br><span class="line">				<span class="keyword">if</span>(s.<span class="built_in">size</span>()&gt;n)&#123;</span><br><span class="line">					b.push(s.top());</span><br><span class="line">					s.pop();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'G'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">if</span>(n&lt;=b.<span class="built_in">size</span>()+s.<span class="built_in">size</span>())&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;s.top()&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">					n++;</span><br><span class="line">					<span class="keyword">if</span>(s.<span class="built_in">size</span>()&lt;n&amp;&amp;!b.empty())&#123;</span><br><span class="line">						s.push(b.top());</span><br><span class="line">						b.pop();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'E'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.<span class="built_in">get</span>(a);</span><br><span class="line">				<span class="keyword">if</span>(a==<span class="string">'N'</span>)</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">while</span>(!b.empty())</span><br><span class="line">					b.pop();</span><br><span class="line">				<span class="keyword">while</span>(!s.empty())</span><br><span class="line">					s.pop();</span><br><span class="line">				n=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -421,7 +950,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -434,7 +963,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -478,12 +1007,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">2k</span>
+    <span title="Symbols count total">8k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1 mins.</span>
+    <span title="Reading time total">7 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
@@ -524,10 +1053,6 @@
 
 
 
-  
-<script src="/js/local-search.js"></script>
-
-
 
 
 
@@ -542,6 +1067,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
   <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
