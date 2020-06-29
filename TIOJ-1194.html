@@ -31,7 +31,7 @@
 <meta property="og:description" content="1194 . 搶因數遊戲Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1194 Description「事情發生在跑跑卡恩車大賽後的幾個月…(請參考TIOJ-1022)，經過了跑跑卡恩車大賽後，原本居住在上城的寒酸員外老姜跟原本居住在下城強大的科學家老皮與老灝成為了好朋友，感情好到常常聚在一起打賭（賭友是嗎？）」— TIOJ1162，小氣又有錢的老姜   經過了許多">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2018-11-10T20:34:50.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:12:34.207Z">
+<meta property="article:modified_time" content="2020-06-29T06:02:38.928Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="數學">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:34" itemprop="dateModified" datetime="2020-06-23T11:12:34Z">2020-06-23</time>
+                <time title="Modified: 2020-06-29 06:02:38" itemprop="dateModified" datetime="2020-06-29T06:02:38Z">2020-06-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>904</span>
+              <span>906</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
 <p>  這次輪到老皮想規則，他想到了兩個遊戲規則：搶倍數遊戲和搶因數遊戲。兩個遊戲的玩法頗為類似，都是有$1$~$n$的數，雙方每次輪流拿掉一個數，當拿掉一個數的時候要同時拿掉它的所有倍數或所有因數(取決於是哪一套規則)，拿完的人就贏了。</p>
 <p>  沒想到他剛很高興的把規則拿給老灝看，老灝就發現了搶倍數遊戲只要剛開始拿1就贏了……但是搶因數遊戲他們仍然找不出必勝的方法，於是便委託聰明的你幫忙寫個程式判斷哪一方有必勝策略。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>數學梗題</p>
-<p>答案是不管$n$是多少都先手必勝，因為我們可以用反證法，首先我們證如果有一個後手必勝的策略，那他顯然不包含拿掉$1$這個步驟，因為不管先手拿哪一個$1$都會被拿掉，所以後手絕對無法做這件事；然後假設$n=k$時是後手必勝，那先手就把$1$拿掉，換成對方先手我方使用後手必勝的戰略，由於此戰略不包含把1拿掉，所以是可執行的，那先手也贏了</p>
+<p>答案是不管$n$是多少都先手必勝，因為我們可以用反證法，首先我們證如果有一個後手必勝的策略，那他顯然不包含拿掉$1$這個步驟，因為不管先手拿哪一個$1$都會被拿掉，所以後手絕對無法做這件事；然後假設$n=k$時是後手必勝，那先手就把$1$拿掉，換成對方先手我方使用後手必勝的戰略，由於此戰略不包含把$1$拿掉，所以是可執行的，那先手也贏了</p>
 <p>雖然很神奇可是應該可以用小測資看出來，這故事告訴我們構小測資的重要(?)</p>
 <p>不過這題沒有給$n$的範圍，看起來會爆long long，反正$n$一點都不重要所以拿string去吃它就好了</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&amp;&amp;s!=<span class="string">"0"</span>)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;t;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

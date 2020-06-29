@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:24" itemprop="dateModified" datetime="2020-06-23T11:12:24Z">2020-06-23</time>
+                <time title="Modified: 2020-06-29 06:26:24" itemprop="dateModified" datetime="2020-06-29T06:26:24Z">2020-06-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,8 +263,13 @@
           <h1 id="1116-十字路口行車方向問題"><a href="#1116-十字路口行車方向問題" class="headerlink" title="1116 . 十字路口行車方向問題"></a>1116 . 十字路口行車方向問題</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1116" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1116</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有一個十字路口，如下圖所示，路口周圍的四個路段(甲、乙、丙、丁)可為單向或雙向行車，我們以 “a” 表示單向且行車方向面對路口，”b” 表示單向且行車方向背向路口， “c” 表示雙向行車。當有一車輛由一路段駛向路口時，我們用 A 表其可向左轉，B 表可以向右轉，C 表可以直行。請設計一程式回答以下問題：當給予(亦即輸入)各個路段的行車方向，請回答(亦即輸出)車輛由各路段駛入路口時，其行車方向有哪些選擇。</p>
 <p><img src="/images/TIOJ-1116a.gif" alt=""></p>
-<p>條件限制：<br>1.若一路段為單向行車且其方向為背向路口，則此路段不會有車駛入路口，此時我們以 “X” 作為該路段的輸出。</p>
-<p>2.若車輛由一路段駛入路口時，其沒有行車方向可選擇(亦即直行、左轉、右轉都不可)，此時我們用 “Y” 作為該路段的輸出。</p>
+<p>條件限制：</p>
+<ol>
+<li><p>若一路段為單向行車且其方向為背向路口，則此路段不會有車駛入路口，此時我們以 “X” 作為該路段的輸出。</p>
+</li>
+<li><p>若車輛由一路段駛入路口時，其沒有行車方向可選擇(亦即直行、左轉、右轉都不可)，此時我們用 “Y” 作為該路段的輸出。</p>
+</li>
+</ol>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>不知道這題要考什麼@@</p>
 <p>閱讀測驗裸題，反正好好做就沒了</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		t.resize(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'b'</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">'X'</span>;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">3</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'A'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">1</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'B'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[<span class="number">2</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'C'</span>);</span><br><span class="line">			<span class="keyword">if</span>(t.empty())</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'Y'</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;t;</span><br><span class="line">		&#125;</span><br><span class="line">		s.push_back(s[<span class="number">0</span>]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">			s.push_back(s[i]);</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">", "</span>;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==<span class="string">'b'</span>)&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'X'</span>;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			t.resize(<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">3</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'A'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">1</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'B'</span>);</span><br><span class="line">			<span class="keyword">if</span>(s[i+<span class="number">2</span>]!=<span class="string">'a'</span>)</span><br><span class="line">				t.push_back(<span class="string">'C'</span>);</span><br><span class="line">			<span class="keyword">if</span>(t.empty())</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">'Y'</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;t;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -318,7 +323,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:26" itemprop="dateModified" datetime="2020-06-23T11:12:26Z">2020-06-23</time>
+                <time title="Modified: 2020-06-28 12:45:22" itemprop="dateModified" datetime="2020-06-28T12:45:22Z">2020-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -335,7 +340,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>770</span>
+              <span>772</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -355,7 +360,7 @@
       
           <h1 id="1126-尋找對稱字串"><a href="#1126-尋找對稱字串" class="headerlink" title="1126 . 尋找對稱字串"></a>1126 . 尋找對稱字串</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1126" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1126</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>若一個字串無論是從左至右讀，或者是從右至左讀，都獲得相同的結果，則我們稱此字串為對稱字串。舉例來說，absba便是一個對稱字串。</p>
-<p>對於任何一個字串而言，該字串可能包含有對稱的部份，稱之為對稱子字串。以字串mississippi為例，此字串有多個對稱子字串，如ississi以及ippi等，且其中以ississi為最長的對稱子字串，其長度為7。</p>
+<p>對於任何一個字串而言，該字串可能包含有對稱的部份，稱之為對稱子字串。以字串mississippi為例，此字串有多個對稱子字串，如ississi以及ippi等，且其中以ississi為最長的對稱子字串，其長度為$7$。</p>
 <p>請寫出一個程式可以找出一字串內的最長對稱子字串之長度。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>看到這題本來想說「喔這就枚舉對稱點嘛」，看到值域「字串長度不超過$30$」……</p>
 <p>上古時期的北市賽根本水箭龜，暴力都會過= =</p>

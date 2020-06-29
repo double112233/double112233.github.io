@@ -31,7 +31,7 @@
 <meta property="og:description" content="1268 . 得分高手 (Master)Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1268 Description一個數字棋盤遊戲，一開始可在棋盤中任選一格為起點，並規定下一步只能選擇起點的右方或下方格子；選擇其中一個方向後，同樣只能自該選擇的格子選擇往右方或是下方的格子推進，依此類推繼續走下去，不能再回頭。每一個格子都有分數，選擇該格子就能取得上面的分數，但是">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2018-11-04T18:52:18.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:12:55.027Z">
+<meta property="article:modified_time" content="2020-06-29T06:25:16.735Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="DP">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:55" itemprop="dateModified" datetime="2020-06-23T11:12:55Z">2020-06-23</time>
+                <time title="Modified: 2020-06-29 06:25:16" itemprop="dateModified" datetime="2020-06-29T06:25:16Z">2020-06-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>894</span>
+              <span>946</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -274,14 +274,13 @@
 
       
         <h1 id="1268-得分高手-Master"><a href="#1268-得分高手-Master" class="headerlink" title="1268 . 得分高手 (Master)"></a>1268 . 得分高手 (Master)</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1268" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1268</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一個數字棋盤遊戲，一開始可在棋盤中任選一格為起點，並規定下一步只能選擇起點的右方或下方格子；選擇其中一個方向後，同樣只能自該選擇的格子選擇往右方或是下方的格子推進，依此類推繼續走下去，不能再回頭。每一個格子都有分數，選擇該格子就能取得上面的分數，但是分數有正得分也有負得分（扣分）。玩家可在任意時候決定不再繼續走，或是依規則走完所有能走的格子。以底下3 x 4的棋盤為例，若選擇以第 2 列第1行為起點，依序通過 3 → -1 → 8 → 6，可得此棋盤最高可得分數 16。</p>
-<p>-8    0    4    -4</p>
-<p>3    -1    -9    3</p>
-<p>-2    8    6    -1</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一個數字棋盤遊戲，一開始可在棋盤中任選一格為起點，並規定下一步只能選擇起點的右方或下方格子；選擇其中一個方向後，同樣只能自該選擇的格子選擇往右方或是下方的格子推進，依此類推繼續走下去，不能再回頭。每一個格子都有分數，選擇該格子就能取得上面的分數，但是分數有正得分也有負得分（扣分）。玩家可在任意時候決定不再繼續走，或是依規則走完所有能走的格子。以底下$3 \times 4$的棋盤為例，若選擇以第 $2$ 列第$1$行為起點，依序通過 $3 \rightarrow -1 \rightarrow 8 \rightarrow 6$，可得此棋盤最高可得分數 $16$。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-8	0	4	-4</span><br><span class="line"></span><br><span class="line">3	-1	-9	3</span><br><span class="line"></span><br><span class="line">-2	8	6	-1</span><br></pre></td></tr></table></figure>
+
 <p>給定棋盤上每一格的分數，請寫一個程式來找出最高可得分數。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一眼看以為是經典dp題，然後就吃WA了</p>
 <p>原來這題可以任選起點和終點QAQ</p>
-<p>不過基本上長的還是一樣，任選起點就是dp式會變成dp[i][j]=max(dp[i-1][j],dp[i][j-1],0)+v[i][j]，依序對應到從上面走下來、從左邊走過來、拿自己當起點；任選終點就是從輸出右下角變成輸出所有人的max而已</p>
+<p>不過基本上長的還是一樣，任選起點就是dp式會變成$dp[i][j]=max(dp[i-1][j],dp[i][j-1],0)+v[i][j]$，依序對應到從上面走下來、從左邊走過來、拿自己當起點；任選終點就是從輸出右下角變成輸出所有人的max而已</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> i=<span class="number">1</span>,j,n,m,p[<span class="number">3010</span>][<span class="number">3010</span>],maxu=<span class="number">-2147483648</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(;i&lt;=m;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;p[i][j];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            p[i][j]=<span class="built_in">max</span>(<span class="built_in">max</span>(p[i<span class="number">-1</span>][j],p[i][j<span class="number">-1</span>]),<span class="number">0</span>)+p[i][j];</span><br><span class="line">            maxu=<span class="built_in">max</span>(p[i][j],maxu);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;maxu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
