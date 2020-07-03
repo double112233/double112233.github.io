@@ -29,6 +29,9 @@
 <meta property="og:site_name" content="Double的Code收藏區">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:author" content="Double Wang">
+<meta property="article:tag" content="程式競賽">
+<meta property="article:tag" content=" Double112233">
+<meta property="article:tag" content=" TIOJ">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://double112233.github.io/page/3/">
@@ -320,7 +323,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-29 05:18:43" itemprop="dateModified" datetime="2020-06-29T05:18:43Z">2020-06-29</time>
+                <time title="Modified: 2020-07-03 12:41:03" itemprop="dateModified" datetime="2020-07-03T12:41:03Z">2020-07-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -374,8 +377,9 @@
 <li>石頭不能疊起來，也不能躺下來，不然間隔的接縫會不整齊，秦始皇會不開心，然後把你『咻碰』！</li>
 <li>一定要滿足一塊高一塊低的方式，不然秦始皇會不開心，然後把你『咻碰』！</li>
 <li>城牆的兩側，一定要是比旁邊那塊還高，不然城牆會很醜，使得秦始皇不開心，然後把你『咻碰』！</li>
-<li>這家廠商相當的優質（因為不優質的話，秦始皇會不開心，然後把他『咻碰』！），每塊石頭的長寬都是一單位，只有高度不均。<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>第一眼覺得是LIS，對於每個值，維護以他為結尾最長的W形或M形序列(就是下一步要往上還是往下)，然後仿照LIS的做法做</li>
+<li>這家廠商相當的優質（因為不優質的話，秦始皇會不開心，然後把他『咻碰』！），每塊石頭的長寬都是一單位，只有高度不均。</li>
 </ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一眼覺得是LIS，對於每個值，維護以他為結尾最長的W形或M形序列(就是下一步要往上還是往下)，然後仿照LIS的做法做</p>
 <p>後來發現一個很greedy的性質，就是如果現在的數字沒辦法接在目前最長的序列之後，那就用它把結尾換掉顯然比較好，然後就沒了</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,a,w=<span class="number">1</span>,m=<span class="number">0</span>,v,o;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a;</span><br><span class="line">	v=o=a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">		<span class="keyword">if</span>(a&lt;v&amp;&amp;w+<span class="number">1</span>&gt;m)&#123;</span><br><span class="line">			m=w+<span class="number">1</span>;</span><br><span class="line">			o=a;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(a&gt;o&amp;&amp;m+<span class="number">1</span>&gt;w)&#123;</span><br><span class="line">			w=m+<span class="number">1</span>;</span><br><span class="line">			v=a;</span><br><span class="line">		&#125;</span><br><span class="line">		o=<span class="built_in">min</span>(o,a);</span><br><span class="line">		v=<span class="built_in">max</span>(v,a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">max</span>(w,m<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

@@ -29,6 +29,9 @@
 <meta property="og:site_name" content="Double的Code收藏區">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:author" content="Double Wang">
+<meta property="article:tag" content="程式競賽">
+<meta property="article:tag" content=" Double112233">
+<meta property="article:tag" content=" TIOJ">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://double112233.github.io/page/4/">
@@ -225,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:32" itemprop="dateModified" datetime="2020-06-23T11:12:32Z">2020-06-23</time>
+                <time title="Modified: 2020-07-03 12:44:25" itemprop="dateModified" datetime="2020-07-03T12:44:25Z">2020-07-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,9 +266,9 @@
           <h1 id="1202-重疊的天際線"><a href="#1202-重疊的天際線" class="headerlink" title="1202 . 重疊的天際線"></a>1202 . 重疊的天際線</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1202" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1202</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>地平線上有許多房子，而這些房子在夕陽的照射之下形成有趣的輪廓，我們稱之為天際線(Skyline)。</p>
 <p>為了方便起見，你可以假設所有的房子都是一個位在2D平面上的矩形，並且有一條邊貼在這個假想2D平面上的X軸。</p>
-<p>一棟建築可以用三元數組($L_i$,$H_i$,$R_i$)來表示，依序代表該建築物的左界座標、高度、右界座標。下方左圖中的八棟建築就是用此方法表示就是(1,11,5), (2,6,7), (3,13,9), (12,7,16), (14,3,25), (19,18,22), (23,13,29), (24,4,28)。</p>
+<p>一棟建築可以用三元數組($L_i$,$H_i$,$R_i$)來表示，依序代表該建築物的左界座標、高度、右界座標。下方左圖中的八棟建築就是用此方法表示就是$(1,11,5), (2,6,7), (3,13,9), (12,7,16), (14,3,25), (19,18,22), (23,13,29), (24,4,28)$。</p>
 <p><img src="/images/TIOJ-1202a.gif" alt=""></p>
-<p>一個天際線也可以用類似的「X-遞增序列」表示出來，例如上面的八棟建築合併之後上方右圖的天際線可表示為：<br>(1, 11, 3, 13, 9, 0, 12, 7, 16, 3, 19, 18, 22, 3, 23, 13, 29, 0)</p>
+<p>一個天際線也可以用類似的「X-遞增序列」表示出來，例如上面的八棟建築合併之後上方右圖的天際線可表示為：<br>$(1, 11, 3, 13, 9, 0, 12, 7, 16, 3, 19, 18, 22, 3, 23, 13, 29, 0)$</p>
 <p>請你寫一個程式，給你這些房子的位置，請你把它們形成的天際線描述出來。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>包得很好的資結題</p>
 <p>看起來可能會想要線段樹什麼的硬弄，不過其實沒這個必要，我的作法是開一個priority_queue紀錄每個建築開始和結束的時間，然後開一個multiset紀錄現有的建築高度，如果現有的高度最大值和前一次輸出不一樣就輸出現在的時間和高度</p>
@@ -983,7 +986,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:40" itemprop="dateModified" datetime="2020-06-23T11:12:40Z">2020-06-23</time>
+                <time title="Modified: 2020-07-03 12:46:10" itemprop="dateModified" datetime="2020-07-03T12:46:10Z">2020-07-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1023,7 +1026,7 @@
 <p>「虛擬蕃茄online」是一個關於人生的遊戲。在人生的路途當中，你必須不斷地學習各種不同的技能，以應付隨時在變化的環境。但是有的時候，你必須擁有一定水準的能力，才能習得該技能。這個時候，你需要的是一個人生顧問(茶)。</p>
 <p>在「虛擬蕃茄online」當中，有一種專門提供諮詢服務的NPsC(誤)。他們是裁決你習得某個技能所須至少具備的「力量點數(strength)」以及「敏捷點數(agility)」，你的力量點數和敏捷點數都必須不小於該數值，才有能力習得該技能。噢，對了，這種NPsC有個特別響亮的名號：「蕃茄諮詢線上裁判-Tomato’s Information Online Judge」。</p>
 <p>球主發現他想要學習的技能總共有$n$個，而每個技能都有所需具備的力量點數$s_i$，以及$a_i$。由於讓兩種技能點數(力量點數以及敏捷點數)分別提升$1$點所需要的時間都是「$1$個蕃茄年」，球主迫不及待地想要知道最少還需要多久就可以學習至少$k$種技巧。你能幫個忙嗎？</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>題意等價於求$(x,y)$滿足座標平面上$(0,0)$到$(x,y)$之間有$\leq k$個點，且$x+y$最小</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>題意等價於求$(x,y)$滿足座標平面上$(0,0)$到$(x,y)$之間有至少$k$個點，且$x+y$最小</p>
 <p>這個時候就要請出一個解決二維問題的套路：窮舉一維用資結砸另一維</p>
 <p>這裏我們可以枚舉$x$座標，這時候我們會發現對於所有掃過的點，我們只關心他們之中第$k$小的$y$座標，那就先照$x$座標排序，之後開個max heap的priority_queue，每掃到一個點就把他的$y$座標塞進priority_queue，如果大小超過$k$就把最大的pop掉</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t,n,k,mini;</span><br><span class="line">pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; arr[<span class="number">1000010</span>];</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt;&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">for</span>(;t&gt;<span class="number">0</span>;t--)&#123;</span><br><span class="line">		<span class="keyword">while</span>(!p.empty())	p.pop();</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;arr[i].first&gt;&gt;arr[i].second;</span><br><span class="line">		sort(arr,arr+n);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">			p.push(arr[i].second);</span><br><span class="line">		mini=arr[k<span class="number">-1</span>].first+p.top();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=k;i&lt;n&amp;&amp;i&lt;mini;i++)&#123;</span><br><span class="line">			p.push(arr[i].second);</span><br><span class="line">			p.pop();</span><br><span class="line">			mini=<span class="built_in">min</span>(mini,arr[i].first+p.top());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;mini&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
