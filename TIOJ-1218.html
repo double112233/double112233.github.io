@@ -31,7 +31,7 @@
 <meta property="og:description" content="1218 . 取因數遊戲Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1218 Description有一堆$n$個石頭，每一次可以拿「現在石頭數的因數」這麼多個石頭。取走最後一個石頭的人輸。 給你$n$的值，請問先手有無必勝策略？ 此外，如果規定「石頭數超過$1$的時候，不能一次全部拿走。同樣每次只能取因數個石頭，但是取走最後一個石頭的人勝。」 給你$n$的值，請">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2018-12-02T19:46:33.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:12:22.123Z">
+<meta property="article:modified_time" content="2020-07-04T08:38:47.686Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="數學">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:22" itemprop="dateModified" datetime="2020-06-23T11:12:22Z">2020-06-23</time>
+                <time title="Modified: 2020-07-04 08:38:47" itemprop="dateModified" datetime="2020-07-04T08:38:47Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +280,7 @@
 <p>給你$n$的值，請問先手有無必勝策略？</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>一看「每列長度不會超過$10000$」就知道是大數學，放棄int、放棄long long、放棄模擬、放棄建表，一定得$O(1)$求解</p>
 <p>第一小題比較顯然，可以發現答案是偶數先手必勝，奇數後手必勝，因為奇數拿完一定會變偶數，偶數的話我就拿掉$1$變成奇數，這樣回來還是偶數，總有一天我會拿到$2$，然後就贏了</p>
-<p>第二小題就稍微麻煩一點了，先手動建表就會發現$1$先手必勝、$2$先手必敗、$3$先手必勝、$4$先手必勝，然後我們因為對於所有的奇數，拿過一次之後會變成偶數，偶數的話只要拿掉$1$就可以變成奇數，而當你從$5$以上的奇數開始拿，下一步一定不可能變成$2$，所以奇數先手必敗，偶數先手必勝，但是$1$~$3$要特判</p>
+<p>第二小題就稍微麻煩一點了，先手動建表就會發現$1$先手必勝、$2$先手必敗、$3$先手必勝、$4$先手必勝，然後我們因為對於所有的奇數，拿過一次之後會變成偶數，偶數的話只要拿掉$1$就可以變成奇數，而當你從$5$以上的奇數開始拿，下一步一定不可能變成$2$，所以奇數先手必敗，偶數先手必勝，但是$1$～$3$要特判</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		reverse(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">while</span>(s.<span class="built_in">size</span>()&amp;&amp;s.back()==<span class="string">'0'</span>)</span><br><span class="line">			s.pop_back();</span><br><span class="line">		<span class="keyword">if</span>(!s.<span class="built_in">size</span>())</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		reverse(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">if</span>((s.back()-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN "</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE "</span>;</span><br><span class="line">		<span class="keyword">if</span>(s==<span class="string">"1"</span>||s==<span class="string">"3"</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN\n"</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">"2"</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE\n"</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>((s.back()-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN\n"</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -443,7 +443,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">46 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:40:26" itemprop="dateModified" datetime="2020-06-23T11:40:26Z">2020-06-23</time>
+                <time title="Modified: 2020-07-04 06:16:23" itemprop="dateModified" datetime="2020-07-04T06:16:23Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +245,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>375</span>
+              <span>384</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -269,8 +269,8 @@
 <p>（註： $[$ $]$ 代表高斯符號）<br>（註：卡恩之力為全地球、不，全宇宙最最強大的力量。）</p>
 <p>為了追求『卡恩之力』，你絞盡腦汁，但卻想不出來</p>
 <p>所以你簡化了一下問題，改成求$F(0)$～$F(n)$之中的最大值。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題高一就看過了，Andrew Yang一眼就知道是在求log，也很快地發現這是大數logOAO，噁心破表直接放棄</p>
-<p>今天又看到，本來想用大數模板處理的，結果因為刻得很痛苦就去查python的log了，然後…就AC了OAO</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題高一就看過了，Andrew Yang一眼就知道是在求$\log$，也很快地發現這是大數$\log$OAO，噁心破表直接放棄</p>
+<p>今天又看到，本來想用大數模板處理的，結果因為刻得很痛苦就去查python的$\log$了，然後…就AC了OAO</p>
 <p>這應該是這個部落格最短的code了= =”</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">print(math.floor(math.log(int(input())+<span class="number">1</span>,<span class="number">2</span>)))</span><br></pre></td></tr></table></figure>
 
@@ -432,7 +432,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-29 05:20:26" itemprop="dateModified" datetime="2020-06-29T05:20:26Z">2020-06-29</time>
+                <time title="Modified: 2020-07-04 06:16:47" itemprop="dateModified" datetime="2020-07-04T06:16:47Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -449,7 +449,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>840</span>
+              <span>844</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -476,7 +476,7 @@
 <ul>
 <li><p>int Initialize()：請先呼叫Initialize將石頭堆好，並且他會回傳石頭的數量</p>
 </li>
-<li><p>int Take_Stone(int a)：將石頭拿出a個，a只能是1或2，並且不能拿超過石頭的數量，如果有違法情形，會直接判定WA，取完之後系統會回傳給你他要取多少。</p>
+<li><p>int Take_Stone(int a)：將石頭拿出a個，a只能是$1$或$2$，並且不能拿超過石頭的數量，如果有違法情形，會直接判定WA，取完之後系統會回傳給你他要取多少。</p>
 </li>
 </ul>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>裸數學題</p>
@@ -824,7 +824,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:22" itemprop="dateModified" datetime="2020-06-23T11:12:22Z">2020-06-23</time>
+                <time title="Modified: 2020-07-04 08:38:47" itemprop="dateModified" datetime="2020-07-04T08:38:47Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -866,7 +866,7 @@
 <p>給你$n$的值，請問先手有無必勝策略？</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>一看「每列長度不會超過$10000$」就知道是大數學，放棄int、放棄long long、放棄模擬、放棄建表，一定得$O(1)$求解</p>
 <p>第一小題比較顯然，可以發現答案是偶數先手必勝，奇數後手必勝，因為奇數拿完一定會變偶數，偶數的話我就拿掉$1$變成奇數，這樣回來還是偶數，總有一天我會拿到$2$，然後就贏了</p>
-<p>第二小題就稍微麻煩一點了，先手動建表就會發現$1$先手必勝、$2$先手必敗、$3$先手必勝、$4$先手必勝，然後我們因為對於所有的奇數，拿過一次之後會變成偶數，偶數的話只要拿掉$1$就可以變成奇數，而當你從$5$以上的奇數開始拿，下一步一定不可能變成$2$，所以奇數先手必敗，偶數先手必勝，但是$1$~$3$要特判</p>
+<p>第二小題就稍微麻煩一點了，先手動建表就會發現$1$先手必勝、$2$先手必敗、$3$先手必勝、$4$先手必勝，然後我們因為對於所有的奇數，拿過一次之後會變成偶數，偶數的話只要拿掉$1$就可以變成奇數，而當你從$5$以上的奇數開始拿，下一步一定不可能變成$2$，所以奇數先手必敗，偶數先手必勝，但是$1$～$3$要特判</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		reverse(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">while</span>(s.<span class="built_in">size</span>()&amp;&amp;s.back()==<span class="string">'0'</span>)</span><br><span class="line">			s.pop_back();</span><br><span class="line">		<span class="keyword">if</span>(!s.<span class="built_in">size</span>())</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		reverse(s.<span class="built_in">begin</span>(),s.<span class="built_in">end</span>());</span><br><span class="line">		<span class="keyword">if</span>((s.back()-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN "</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE "</span>;</span><br><span class="line">		<span class="keyword">if</span>(s==<span class="string">"1"</span>||s==<span class="string">"3"</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN\n"</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(s==<span class="string">"2"</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE\n"</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>((s.back()-<span class="string">'0'</span>)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"WIN\n"</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"LOSE\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -918,7 +918,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:29" itemprop="dateModified" datetime="2020-06-23T11:12:29Z">2020-06-23</time>
+                <time title="Modified: 2020-07-04 08:39:35" itemprop="dateModified" datetime="2020-07-04T08:39:35Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -956,7 +956,7 @@
           <h1 id="1130-Dark-Kingdom-II"><a href="#1130-Dark-Kingdom-II" class="headerlink" title="1130 . Dark Kingdom II"></a>1130 . Dark Kingdom II</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1130" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1130</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Dark Kingdom 決定以有瞬間傳送效果的黑暗傳送路徑建立新的運輸系統。這個法術有破壞地表的副作用，所以 Dark Kingdom 的法術工程師要把所有 $n$ 個城市用環狀的路徑串接起來。</p>
 <p><img src="/images/TIOJ-1130a.png" alt=""></p>
-<p>如圖，在這個傳送系統完成之後，彼得要從 $3$ 到 $2$(藍色的線)，雖然要傳送 $5$ 次，但是還是比騎馬直接過去快多了，不過彼得覺得走這樣一趟就要付 $5$ 元實在是很貴。有一天彼得在傳送的時候睡著了，他醒過來的時候剛好在 $2$，只是不知道已經環遊 Dark Kingdom 多少次了；但是當他要付錢離開傳送站的時候發現還是只要付 $5$ 元！<br>聰明的彼得發現，進傳送站時拿的水晶，不是紀錄傳送了幾次，而是從哪個城進站。另一天彼得進入 $3$ 的傳送站時，遇到了一個要從 $1$ 到 $4$(紅線)的朋友，他就提議兩個人交換水晶，結果兩個人竟然都只要付 $1$ 元(綠線)！</p>
+<p>如圖，在這個傳送系統完成之後，彼得要從 $3$ 到 $2$（藍色的線），雖然要傳送 $5$ 次，但是還是比騎馬直接過去快多了，不過彼得覺得走這樣一趟就要付 $5$ 元實在是很貴。有一天彼得在傳送的時候睡著了，他醒過來的時候剛好在 $2$，只是不知道已經環遊 Dark Kingdom 多少次了；但是當他要付錢離開傳送站的時候發現還是只要付 $5$ 元！<br>聰明的彼得發現，進傳送站時拿的水晶，不是紀錄傳送了幾次，而是從哪個城進站。另一天彼得進入 $3$ 的傳送站時，遇到了一個要從 $1$ 到 $4$（紅線）的朋友，他就提議兩個人交換水晶，結果兩個人竟然都只要付 $1$ 元（綠線）！</p>
 <p>印證了自己的想法之後，彼得就開始號召了 $m$ 個人參加這個行動，你的工作是寫一個程式，幫彼得計算他可以幫大家省多少錢。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以想到一個顯然的greedy解，就是對於每一個起點搜最近的終點，看起來似乎要$O(nlogn)$做二分搜，然後就會發現使用爬行法可以做到$O(n)$</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,tmp,ans,s[<span class="number">30010</span>],e[<span class="number">30010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;s[i]&gt;&gt;e[i];</span><br><span class="line">			tmp=e[i]-s[i];</span><br><span class="line">			<span class="keyword">if</span>(tmp&lt;<span class="number">0</span>)</span><br><span class="line">				tmp+=n;</span><br><span class="line">			ans+=tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(e,e+m);</span><br><span class="line">		sort(s,s+m);</span><br><span class="line">		tmp=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="keyword">while</span>(e[tmp]&lt;s[i]||e[tmp]==<span class="number">-1</span>)&#123;</span><br><span class="line">				tmp++;</span><br><span class="line">				<span class="keyword">if</span>(tmp&gt;=m)&#123;</span><br><span class="line">					tmp=<span class="number">0</span>;</span><br><span class="line">					s[i]-=n;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			ans-=e[tmp]-s[i];</span><br><span class="line">			e[tmp]=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1298,7 +1298,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">46 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://double112233.github.io/images/TIOJ-1130a.png">
 <meta property="article:published_time" content="2018-12-02T11:04:49.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:12:29.889Z">
+<meta property="article:modified_time" content="2020-07-04T08:39:35.186Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="greedy">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:29" itemprop="dateModified" datetime="2020-06-23T11:12:29Z">2020-06-23</time>
+                <time title="Modified: 2020-07-04 08:39:35" itemprop="dateModified" datetime="2020-07-04T08:39:35Z">2020-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
         <h1 id="1130-Dark-Kingdom-II"><a href="#1130-Dark-Kingdom-II" class="headerlink" title="1130 . Dark Kingdom II"></a>1130 . Dark Kingdom II</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1130" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1130</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Dark Kingdom 決定以有瞬間傳送效果的黑暗傳送路徑建立新的運輸系統。這個法術有破壞地表的副作用，所以 Dark Kingdom 的法術工程師要把所有 $n$ 個城市用環狀的路徑串接起來。</p>
 <p><img src="/images/TIOJ-1130a.png" alt=""></p>
-<p>如圖，在這個傳送系統完成之後，彼得要從 $3$ 到 $2$(藍色的線)，雖然要傳送 $5$ 次，但是還是比騎馬直接過去快多了，不過彼得覺得走這樣一趟就要付 $5$ 元實在是很貴。有一天彼得在傳送的時候睡著了，他醒過來的時候剛好在 $2$，只是不知道已經環遊 Dark Kingdom 多少次了；但是當他要付錢離開傳送站的時候發現還是只要付 $5$ 元！<br>聰明的彼得發現，進傳送站時拿的水晶，不是紀錄傳送了幾次，而是從哪個城進站。另一天彼得進入 $3$ 的傳送站時，遇到了一個要從 $1$ 到 $4$(紅線)的朋友，他就提議兩個人交換水晶，結果兩個人竟然都只要付 $1$ 元(綠線)！</p>
+<p>如圖，在這個傳送系統完成之後，彼得要從 $3$ 到 $2$（藍色的線），雖然要傳送 $5$ 次，但是還是比騎馬直接過去快多了，不過彼得覺得走這樣一趟就要付 $5$ 元實在是很貴。有一天彼得在傳送的時候睡著了，他醒過來的時候剛好在 $2$，只是不知道已經環遊 Dark Kingdom 多少次了；但是當他要付錢離開傳送站的時候發現還是只要付 $5$ 元！<br>聰明的彼得發現，進傳送站時拿的水晶，不是紀錄傳送了幾次，而是從哪個城進站。另一天彼得進入 $3$ 的傳送站時，遇到了一個要從 $1$ 到 $4$（紅線）的朋友，他就提議兩個人交換水晶，結果兩個人竟然都只要付 $1$ 元（綠線）！</p>
 <p>印證了自己的想法之後，彼得就開始號召了 $m$ 個人參加這個行動，你的工作是寫一個程式，幫彼得計算他可以幫大家省多少錢。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以想到一個顯然的greedy解，就是對於每一個起點搜最近的終點，看起來似乎要$O(nlogn)$做二分搜，然後就會發現使用爬行法可以做到$O(n)$</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,tmp,ans,s[<span class="number">30010</span>],e[<span class="number">30010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;s[i]&gt;&gt;e[i];</span><br><span class="line">			tmp=e[i]-s[i];</span><br><span class="line">			<span class="keyword">if</span>(tmp&lt;<span class="number">0</span>)</span><br><span class="line">				tmp+=n;</span><br><span class="line">			ans+=tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(e,e+m);</span><br><span class="line">		sort(s,s+m);</span><br><span class="line">		tmp=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="keyword">while</span>(e[tmp]&lt;s[i]||e[tmp]==<span class="number">-1</span>)&#123;</span><br><span class="line">				tmp++;</span><br><span class="line">				<span class="keyword">if</span>(tmp&gt;=m)&#123;</span><br><span class="line">					tmp=<span class="number">0</span>;</span><br><span class="line">					s[i]-=n;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			ans-=e[tmp]-s[i];</span><br><span class="line">			e[tmp]=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -445,7 +445,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">46 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
