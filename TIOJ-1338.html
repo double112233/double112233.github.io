@@ -31,7 +31,7 @@
 <meta property="og:description" content="1338 . 因數元素Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1338 Description現在你有一個長度為$N$的正整數序列$C_0,C_1,\ldots,C_{N-1}$。對於這個序列的某個連續子序列$C_{[L,R)}$，定義這個連續子序列的「因數元素」為一個範圍內的數$C_i$（$L\leq i&lt;R$），使得它可以整除每一個$C_{[L,R)">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-02-04T21:09:37.000Z">
-<meta property="article:modified_time" content="2020-06-24T03:29:37.478Z">
+<meta property="article:modified_time" content="2020-07-10T12:51:28.909Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="Sparse_Table">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-24 03:29:37" itemprop="dateModified" datetime="2020-06-24T03:29:37Z">2020-06-24</time>
+                <time title="Modified: 2020-07-10 12:51:28" itemprop="dateModified" datetime="2020-07-10T12:51:28Z">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
       
         <h1 id="1338-因數元素"><a href="#1338-因數元素" class="headerlink" title="1338 . 因數元素"></a>1338 . 因數元素</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1338" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1338</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>現在你有一個長度為$N$的正整數序列$C_0,C_1,\ldots,C_{N-1}$。<br>對於這個序列的某個連續子序列$C_{[L,R)}$，定義這個連續子序列的「因數元素」為一個範圍內的數$C_i$（$L\leq i&lt;R$），使得它可以整除每一個$C_{[L,R)}$之間的數。<br>給你$L,R$，試判斷這個連續子序列中存不存在「因數元素」。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>溫馨提示，log2是不會過的，請使用__builtin_clz或__log</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>溫馨提示，<code>log2</code>是不會過的，請使用<code>__builtin_clz</code>或<code>__log</code></p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"lib1338.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">1000000</span>+<span class="number">10</span>,MAXLOGN=<span class="number">21</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> mi[MAXLOGN] [MAXN],f[MAXLOGN] [MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> N, <span class="keyword">long</span> <span class="keyword">long</span> C[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;N; i++) &#123;</span><br><span class="line">        f[<span class="number">0</span>][i]=mi[<span class="number">0</span>][i]=C[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;<span class="number">21</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;N; i++) &#123;</span><br><span class="line">            mi[j][i]=<span class="built_in">min</span>(mi[j<span class="number">-1</span>][i], mi[j<span class="number">-1</span>][i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))]);</span><br><span class="line">            f[j][i]=__gcd(f[j<span class="number">-1</span>][i], f[j<span class="number">-1</span>][i+(<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>))]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k=__lg(R-L);</span><br><span class="line">    <span class="keyword">return</span> __gcd(f[k][L],f[k][R-(<span class="number">1</span>&lt;&lt;k)])==<span class="built_in">min</span>(mi[k][L],mi[k][R-(<span class="number">1</span>&lt;&lt;k)]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -376,20 +376,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -433,12 +433,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">51k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

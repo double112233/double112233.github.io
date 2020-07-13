@@ -31,7 +31,7 @@
 <meta property="og:description" content="1339 . 俄羅斯娃娃－未完Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1339 Description你用了俄羅斯娃娃許了願，然而俄羅斯娃娃們因法力不支(?)而紛紛倒下了。被這魔力深深吸引的你，決定好要去尋找其它擁有法力的俄羅斯娃娃繼續許願。 要知道，俄羅斯娃娃的法力不是由單一一個俄羅斯娃娃決定的，而是由一堆俄羅斯娃娃們之間的相互作用所決定的。一堆俄羅斯娃娃的">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-02-05T11:48:01.000Z">
-<meta property="article:modified_time" content="2020-06-24T03:35:40.822Z">
+<meta property="article:modified_time" content="2020-07-10T12:50:00.716Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="BIT">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-24 03:35:40" itemprop="dateModified" datetime="2020-06-24T03:35:40Z">2020-06-24</time>
+                <time title="Modified: 2020-07-10 12:50:00" itemprop="dateModified" datetime="2020-07-10T12:50:00Z">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +284,7 @@
 <p>你到了一間俄羅斯娃娃店，看到了一組又一組的俄羅斯娃娃。當然，你想要找到法力最高強的那組俄羅斯娃娃。為此，你想要用程式幫助你計算給定的俄羅斯娃娃們的法力總和。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題要算的式子有很明顯地偏序的感覺，既然只有二維就寫個BIT吧。先把式子拆成$i$的部分和$j$的部分，$i$的部分需要一個BIT知道有多少比她小的俄羅斯娃娃，$j$的部分可以用一個BIT維護，因為數值有點大兩邊都要離散化</p>
 <p>然後我就TLE了@@</p>
-<p>map跑太慢，開unordered_map就AC了，時間只有一半不到OAO，unordered賽高！！！</p>
+<p><code>map</code>跑太慢，開<code>unordered_map</code>就AC了，時間只有一半不到OAO，<code>unordered</code>賽高！！！</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1000000</span>+<span class="number">10</span>,mod=<span class="number">1000000009</span>;</span><br><span class="line"><span class="keyword">int</span> n,<span class="built_in">bit</span>[N],bit2[N],ans,s[N];</span><br><span class="line">pi p[N];</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; mp;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (pos&lt;=n) &#123;</span><br><span class="line">        <span class="built_in">bit</span>[pos]+=k;</span><br><span class="line">        <span class="built_in">bit</span>[pos]%=mod;</span><br><span class="line">        bit2[pos]++;</span><br><span class="line">        pos+=lowbit(pos);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> pi <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>,num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (pos) &#123;</span><br><span class="line">        cnt+=<span class="built_in">bit</span>[pos];</span><br><span class="line">        cnt%=mod;</span><br><span class="line">        num+=bit2[pos];</span><br><span class="line">        pos-=lowbit(pos);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;cnt,num&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;p[i].F&gt;&gt;p[i].S;</span><br><span class="line">        s[i]=p[i].S;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(p, p+n);</span><br><span class="line">    sort(s, s+n);</span><br><span class="line">    <span class="keyword">int</span> nn=n;</span><br><span class="line">    n=unique(s, s+n)-s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        mp[s[i]]=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nn; i++) &#123;</span><br><span class="line">        <span class="keyword">auto</span> a=query(mp[p[i].S]);</span><br><span class="line">        ans+=(p[i].F*p[i].S%mod*a.S%mod-a.F+mod)%mod;</span><br><span class="line">        ans%=mod;</span><br><span class="line">        add(mp[p[i].S], p[i].F*p[i].S%mod);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -389,20 +389,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -446,12 +446,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">51k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

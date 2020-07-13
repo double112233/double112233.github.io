@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://double112233.github.io/images/TIOJ-1489a.png">
 <meta property="article:published_time" content="2018-12-15T20:28:25.000Z">
-<meta property="article:modified_time" content="2020-07-04T08:11:04.631Z">
+<meta property="article:modified_time" content="2020-07-10T12:54:33.973Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="字串">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-04 08:11:04" itemprop="dateModified" datetime="2020-07-04T08:11:04Z">2020-07-04</time>
+                <time title="Modified: 2020-07-10 12:54:33" itemprop="dateModified" datetime="2020-07-10T12:54:33Z">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>每次看到精美包裝的資結題就蠻開心的</p>
 <p>雖說長的一臉字串樣，可是這題就是問「給你一個由$1$～$26$組成的正整數序列，求包含$1$～$26$的區間長度的最小值」</p>
 <p>第一眼就爬行法吧，維護裡面有$1$～$26$的$l$和$r$，爬的時候求$min(r-l)$發生時$l$和$r$的值</p>
-<p>然後這題我寫了兩種做法，一種是直接拿queue維護現在的$[l,r)$，另一種是對於每個英文字母開一個queue紀錄該字母所有出現的位置，那麼$l$和$r$就是所有front的最小和最大值$[l,r]$，更新$l$的時候就pop掉最小的front就好了</p>
+<p>然後這題我寫了兩種做法，一種是直接拿<code>queue</code>維護現在的$[l,r)$，另一種是對於每個英文字母開一個<code>queue</code>紀錄該字母所有出現的位置，那麼$l$和$r$就是所有<code>front</code>的最小和最大值$[l,r]$，更新$l$的時候就pop掉最小的<code>front</code>就好了</p>
 <p>查了一下網路上第一種最法好像很多人寫過，就只放第二種的code吧</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q[<span class="number">26</span>];</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> n,ansl,ansr,l,r,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)&#123;</span><br><span class="line">		<span class="keyword">bool</span> ok=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)</span><br><span class="line">			<span class="keyword">while</span>(q[i].<span class="built_in">size</span>())</span><br><span class="line">				q[i].pop();</span><br><span class="line">		<span class="built_in">cin</span>.ignore();</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			q[s[i]-<span class="string">'a'</span>].push(i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(q[i].empty())&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">"not found\n"</span>;</span><br><span class="line">				ok=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ok)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		ansl=l=<span class="number">0</span>;</span><br><span class="line">		r=q[<span class="number">0</span>].front();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">26</span>;i++)</span><br><span class="line">			r=<span class="built_in">max</span>(r,q[i].front());</span><br><span class="line">		ansr=r;</span><br><span class="line">		ans=r-l+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(r&lt;n)&#123;</span><br><span class="line">			l++;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">				<span class="keyword">while</span>(q[i].<span class="built_in">size</span>()&amp;&amp;q[i].front()&lt;l)</span><br><span class="line">					q[i].pop();</span><br><span class="line">				<span class="keyword">if</span>(q[i].empty())&#123;</span><br><span class="line">					ok=<span class="literal">true</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				r=<span class="built_in">max</span>(r,q[i].front());</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ok)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(r-l+<span class="number">1</span>&lt;ans)&#123;</span><br><span class="line">				ans=r-l+<span class="number">1</span>;</span><br><span class="line">				ansr=r;</span><br><span class="line">				ansl=l;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=ansl;i&lt;=ansr;i++)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -389,20 +389,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -446,12 +446,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">51k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

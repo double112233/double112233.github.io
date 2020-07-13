@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://double112233.github.io/images/TIOJ-1400a.png">
 <meta property="article:published_time" content="2018-10-28T18:58:18.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:12:45.119Z">
+<meta property="article:modified_time" content="2020-07-10T13:02:52.362Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="priority_queue">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 11:12:45" itemprop="dateModified" datetime="2020-06-23T11:12:45Z">2020-06-23</time>
+                <time title="Modified: 2020-07-10 13:02:52" itemprop="dateModified" datetime="2020-07-10T13:02:52Z">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,8 +282,8 @@
 <p>GET：取出黑盒子當中第 $k$ 小的數字，其中 $k$ 是同一組測試資料中先前呼叫GET成功的次數$+1$，若找不到該數則什麼都不用操作，當作沒事一樣。</p>
 <p>EXIT：換一組測試資料，清空黑盒子。</p>
 <p>END：請結束程式。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題好可怕= =<br><img src="/images/TIOJ-1400a.png" alt=""><br>我的作法是開一個max heap，維護它的大小是$n$，那麼get的時候只要取他的top就好了，塞不進去的東西就放進一個min heap。</p>
-<p>雖說去年就想到這個做法了，可是之前一直用string去吃他的指令然後就大TLE，這次重寫用的是輸入優化，但是因為bug一大堆所以狂吃WA，最後的作法是cin.get()吃指令的第一個字元，cin.ignore()把多的東西拔掉，用原本的cin吃整數。這樣就可以AC了(所以說cin吃string是多慢啊？)</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題好可怕= =<br><img src="/images/TIOJ-1400a.png" alt=""><br>我的作法是開一個max heap，維護它的大小是$n$，那麼get的時候只要取他的<code>top</code>就好了，塞不進去的東西就放進一個min heap。</p>
+<p>雖說去年就想到這個做法了，可是之前一直用<code>string</code>去吃他的指令然後就大TLE，這次重寫用的是輸入優化，但是因為bug一大堆所以狂吃WA，最後的作法是<code>cin.get()``吃指令的第一個字元，</code>cin.ignore()``把多的東西拔掉，用原本的<code>cin</code>吃整數。這樣就可以AC了(所以說<code>cin</code>吃<code>string</code>是多慢啊？)</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;b;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,n=<span class="number">1</span>,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>.<span class="built_in">get</span>(a))&#123;</span><br><span class="line">		<span class="keyword">switch</span>(a)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'P'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">				s.push(x);</span><br><span class="line">				<span class="keyword">if</span>(s.<span class="built_in">size</span>()&gt;n)&#123;</span><br><span class="line">					b.push(s.top());</span><br><span class="line">					s.pop();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'G'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">if</span>(n&lt;=b.<span class="built_in">size</span>()+s.<span class="built_in">size</span>())&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;s.top()&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">					n++;</span><br><span class="line">					<span class="keyword">if</span>(s.<span class="built_in">size</span>()&lt;n&amp;&amp;!b.empty())&#123;</span><br><span class="line">						s.push(b.top());</span><br><span class="line">						b.pop();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'E'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.<span class="built_in">get</span>(a);</span><br><span class="line">				<span class="keyword">if</span>(a==<span class="string">'N'</span>)</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">while</span>(!b.empty())</span><br><span class="line">					b.pop();</span><br><span class="line">				<span class="keyword">while</span>(!s.empty())</span><br><span class="line">					s.pop();</span><br><span class="line">				n=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -382,20 +382,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -439,12 +439,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">51k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

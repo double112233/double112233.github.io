@@ -31,7 +31,7 @@
 <meta property="og:description" content="1819 . 綿羊山Linkhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1819 Description有天你閒來沒事，所以你就去爬綿羊山(因為魯蛋沒開台)… 但是你突然發現爬綿羊山好累…所以你決定算一下爬綿羊山浪費體力的程度是多少&#x3D;w&#x3D;綿羊山其實是一座山脈，山地跟平地的交界處剛好都在數線上的整數座標上，爬綿羊山浪費體力的程度為”連續山地的數量” 這時邪惡的小綿羊看到你在">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2018-12-19T19:56:54.000Z">
-<meta property="article:modified_time" content="2020-07-04T07:57:38.394Z">
+<meta property="article:modified_time" content="2020-07-10T12:53:57.202Z">
 <meta property="article:author" content="Double Wang">
 <meta property="article:tag" content="TIOJ">
 <meta property="article:tag" content="離散化">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-04 07:57:38" itemprop="dateModified" datetime="2020-07-04T07:57:38Z">2020-07-04</time>
+                <time title="Modified: 2020-07-10 12:53:57" itemprop="dateModified" datetime="2020-07-10T12:53:57Z">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
 <p>現在你想知道所有「爬綿羊山浪費體力的程度」中的最大值。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題想到解的時候很有趣，de完bug之後發現很毒瘤@@</p>
 <p>首先你會想到最顯然的解就是離散化之後開線段樹，樹上維護區間的答案以及這個區間左右是不是$1$，然後記得離散化的時候對於$[l,r]$要把$l-1,l,r,r+1$都進去離散化，這樣才不會把空白砍掉XDDD</p>
-<p>我最先想到的其實是第二個解，首先你會發現修改順序不影響最後浪費體力的程度，接著又發現兩個左右端點有重複的修改其實等價於一個修改，反向來說如果都不重複，那答案就會$+1$，所以就開一個set維護所有端點(左閉右開)，吃到一個詢問就去查現在的$[l,r)$在不在set裡，如果在就把set裡的拔掉，否則就加進去，那麼set大小的一半就是當前的答案</p>
+<p>我最先想到的其實是第二個解，首先你會發現修改順序不影響最後浪費體力的程度，接著又發現兩個左右端點有重複的修改其實等價於一個修改，反向來說如果都不重複，那答案就會$+1$，所以就開一個<code>set</code>維護所有端點(左閉右開)，吃到一個詢問就去查現在的$[l,r)$在不在<code>set</code>裡，如果在就把<code>set</code>裡的拔掉，否則就加進去，那麼<code>set</code>3大小的一半就是當前的答案</p>
 <p>這題毒瘤的點在於，他給的區間不保證第一個值小於等於第二個OAO……</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,a,b,maxu=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		<span class="keyword">if</span>(a&gt;b)</span><br><span class="line">			swap(a,b);</span><br><span class="line">		<span class="keyword">if</span>(s.count(a))</span><br><span class="line">			s.erase(a);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			s.insert(a);</span><br><span class="line">		<span class="keyword">if</span>(s.count(b+<span class="number">1</span>))</span><br><span class="line">			s.erase(b+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			s.insert(b+<span class="number">1</span>);</span><br><span class="line">		maxu=<span class="built_in">max</span>(maxu,(<span class="keyword">int</span>)s.<span class="built_in">size</span>()/<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;maxu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -384,20 +384,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -441,12 +441,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">51k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">46 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
