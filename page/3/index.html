@@ -197,6 +197,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1489.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1489.html" class="post-title-link" itemprop="url">TIOJ-1489</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-15 20:28:25" itemprop="dateCreated datePublished" datetime="2018-12-15T20:28:25Z">2018-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 12:54:33" itemprop="dateModified" datetime="2020-07-10T12:54:33Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1489-E-核心字串"><a href="#1489-E-核心字串" class="headerlink" title="1489 . E.核心字串"></a>1489 . E.核心字串</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1489" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1489</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>在加解密中，常常藉由加入大量沒用的資訊來隱藏資訊，若要取得隱藏的資訊，則是用大家都知道的方式來解密。雖然解密方法眾所皆知，但是往往需要大量的計算量，達到保護資料的作用。</p>
+<p>其中一種需要大量計算的加解密稱為核心字串，核心字串的加密原理是將資訊原封不動，只在需要加密資訊的前後加入冗長的資訊保護。加密過後的資訊會有以下的性質：加密過後的字串包含所有符號的最短連續區間即為隱藏的資訊。</p>
+<p><img src="/images/TIOJ-1489a.png" alt=""></p>
+<p>如上面字串所示連續區間$(1, 3)$包含符號集合${a, b, c}$。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>每次看到精美包裝的資結題就蠻開心的</p>
+<p>雖說長的一臉字串樣，可是這題就是問「給你一個由$1$～$26$組成的正整數序列，求包含$1$～$26$的區間長度的最小值」</p>
+<p>第一眼就爬行法吧，維護裡面有$1$～$26$的$l$和$r$，爬的時候求$min(r-l)$發生時$l$和$r$的值</p>
+<p>然後這題我寫了兩種做法，一種是直接拿<code>queue</code>維護現在的$[l,r)$，另一種是對於每個英文字母開一個<code>queue</code>紀錄該字母所有出現的位置，那麼$l$和$r$就是所有<code>front</code>的最小和最大值$[l,r]$，更新$l$的時候就pop掉最小的<code>front</code>就好了</p>
+<p>查了一下網路上第一種最法好像很多人寫過，就只放第二種的code吧</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q[<span class="number">26</span>];</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">int</span> n,ansl,ansr,l,r,ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)&#123;</span><br><span class="line">		<span class="keyword">bool</span> ok=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)</span><br><span class="line">			<span class="keyword">while</span>(q[i].<span class="built_in">size</span>())</span><br><span class="line">				q[i].pop();</span><br><span class="line">		<span class="built_in">cin</span>.ignore();</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			q[s[i]-<span class="string">'a'</span>].push(i);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(q[i].empty())&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">"not found\n"</span>;</span><br><span class="line">				ok=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ok)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		ansl=l=<span class="number">0</span>;</span><br><span class="line">		r=q[<span class="number">0</span>].front();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">26</span>;i++)</span><br><span class="line">			r=<span class="built_in">max</span>(r,q[i].front());</span><br><span class="line">		ansr=r;</span><br><span class="line">		ans=r-l+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(r&lt;n)&#123;</span><br><span class="line">			l++;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">				<span class="keyword">while</span>(q[i].<span class="built_in">size</span>()&amp;&amp;q[i].front()&lt;l)</span><br><span class="line">					q[i].pop();</span><br><span class="line">				<span class="keyword">if</span>(q[i].empty())&#123;</span><br><span class="line">					ok=<span class="literal">true</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				r=<span class="built_in">max</span>(r,q[i].front());</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ok)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(r-l+<span class="number">1</span>&lt;ans)&#123;</span><br><span class="line">				ans=r-l+<span class="number">1</span>;</span><br><span class="line">				ansr=r;</span><br><span class="line">				ansl=l;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=ansl;i&lt;=ansr;i++)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1464.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1071,104 +1167,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1410.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1410.html" class="post-title-link" itemprop="url">TIOJ-1410</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-12 20:26:19" itemprop="dateCreated datePublished" datetime="2018-11-12T20:26:19Z">2018-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-10 12:57:07" itemprop="dateModified" datetime="2020-07-10T12:57:07Z">2020-07-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1410-Comiket"><a href="#1410-Comiket" class="headerlink" title="1410 . Comiket"></a>1410 . Comiket</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1410" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1410</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Comic Market （コミックマーケット），是由Comic Market準備會舉辦的日本以至全球最大型的同人誌即賣會。略稱Comiket（コミケ）或 CM。</p>
-<p>八月舉行的Comic Market會叫夏コミ而十二月舉行的則叫作冬コミ。</p>
-<p>一直以來，Comic Market均是業餘漫畫愛好者將他們的二次創作製作成的同人誌售賣的地方。一般而言這些人或者「同人組織」（サークル）都是以非牟利方式售賣這些同人誌。但實際上，Comic Market也是這些具有才能的業餘漫畫愛好者或者「同人組織」建立知名度的地方，一些現時知名的漫畫家，由初期柴門文、高橋留美子到近期的CLAMP也是在Comic Market被人發掘。部份的「同人組織」（如TYPE-MOON）又由於實在太受歡迎，在Comic Market甚至能賺到足夠金錢去公司化。</p>
-<p>隨著Comic Market的知名度越來越大，現時有一些職業漫畫家以及遊戲公司（一般而言售賣美少女遊戲的公司較多）也會參加Comic Market。以「公司名義」參加的機構會被安置到特定的場館。</p>
-<p>雖然 Comic Market 是以漫畫、動畫的同人作品為主，但其實一些鐵道愛好者，哥德蘿莉衣服的設計師，業餘歌手甚至業餘畫家都會到 Comic Market 發售他們的作品。</p>
-<p>在東京國際展示場的場外設有Cosplay區可供Cosplay愛好者拍照。</p>
-<p>近年來參加人數不斷增加，售賣的攤位數目達到$35,000$個（還在不斷上升當中）。而由於每次有意在Comic Market擺設攤位的人或團體實在太多，故需進行抽簽。而入場人數每次舉行（通常是三日）均會達到$550,000$人次以上（還在不斷上升當中）。</p>
-<p>參加者遍及全部年齡層但以高中畢業至三十多歲的人為主。近來專程來Comic Market參觀，甚至設攤售賣其同人誌的外國人亦不在少數。</p>
-<p>因為人數實在太多了，所以租借場地成了一個大問題，主辦單位為此傷透了腦筋，場地太大就顯得浪費（成本問題），場地太小又無法容納那麼多人，於是透過了某強大的組織得知了所有會參加的人的『到訪時間』以及『離開時間』，但也因為人數太多了，所以無法輕易從這些資料看出最多可能會有多少人同時出現在會場中，你能幫助他們嗎？</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>區間加值求全域最大值，看起來可以線段樹BIT之類的，不過因為是離線加上需要離散化，我直接用了<code>priority_queue</code></p>
-<p>其實就我的作法來說也可以直接<code>sort</code>，不過我還是習慣<code>priority_queue</code>，就像我喜歡Disjoint set一樣</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;,<span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;,greater&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt;&gt; p;</span><br><span class="line"><span class="keyword">int</span> n,a,b,maxu,c,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">			p.push(&#123;a,<span class="number">1</span>&#125;);</span><br><span class="line">			p.push(&#123;b+<span class="number">1</span>,<span class="number">-1</span>&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		maxu=c=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(!p.empty())&#123;</span><br><span class="line">			c+=p.top().second;</span><br><span class="line">			t=p.top().first;</span><br><span class="line">			p.pop();</span><br><span class="line">			<span class="keyword">if</span>(p.top().first!=t)</span><br><span class="line">				maxu=<span class="built_in">max</span>(maxu,c);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;maxu&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1238,7 +1236,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1251,7 +1249,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">39</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1295,12 +1293,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">54k</span>
+    <span title="Symbols count total">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">49 mins.</span>
+    <span title="Reading time total">51 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
