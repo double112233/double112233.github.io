@@ -197,6 +197,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1505.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1505.html" class="post-title-link" itemprop="url">TIOJ-1505</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-16 09:51:45" itemprop="dateCreated datePublished" datetime="2018-12-16T09:51:45Z">2018-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-03 12:36:26" itemprop="dateModified" datetime="2020-07-03T12:36:26Z">2020-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>906</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1505-Assssss"><a href="#1505-Assssss" class="headerlink" title="1505 . Assssss!!"></a>1505 . Assssss!!</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1505" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1505</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>現在有一個除法數列</p>
+<p>$X_1 / X_2 / X_3 / \ldots / X_n$</p>
+<p>如果會整除，那巧克男孩就會Asssss～!! (別懷疑，這個人對任何東西都可以啊嘶的)<br>不過問題是這樣的，就是原本的數列中是有括號的，但是現在消失了。<br>問你有沒有可能存在一個括號的擺法，使得巧克男孩啊～嘶～～!!</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我們可以證明只要$a_1\times a_3\times a_4\times\ldots\times a_n$是$a_2$的倍數就足夠了</p>
+<p>首先我們可以觀察出把它整理完之後會是一個分數，那我們首先可以發現$a_2$一定在分母，因為估計說對每個$/$進行運算時，前面的分子分母關係不變，後面的分子分母會反轉，所以$a_2$會剛好被反轉一次，那麼他一定在分母；接下來是構造，我們只要去做$a_1/(…(((a_2/a_3)/a_4)/a_5)…./a_n)$就可以讓他變成$\frac{a_1\times a_3\times a_4\times a_5\times\ldots\times a_n}{a_2}$，所以我們只要確認他是不是整數就完事了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;y)</span><br><span class="line">		swap(x,y);</span><br><span class="line">	<span class="keyword">return</span> (x%y)?gcd(y,x%y):y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n,a,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		b/=gcd(a,b);</span><br><span class="line">		n-=<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">			b/=gcd(a,b);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">1</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"Asssss!!\n"</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"zzz...\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1489.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1075,98 +1167,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1130.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1130.html" class="post-title-link" itemprop="url">TIOJ-1130</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-02 11:04:49" itemprop="dateCreated datePublished" datetime="2018-12-02T11:04:49Z">2018-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-04 08:39:35" itemprop="dateModified" datetime="2020-07-04T08:39:35Z">2020-07-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1130-Dark-Kingdom-II"><a href="#1130-Dark-Kingdom-II" class="headerlink" title="1130 . Dark Kingdom II"></a>1130 . Dark Kingdom II</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1130" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1130</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Dark Kingdom 決定以有瞬間傳送效果的黑暗傳送路徑建立新的運輸系統。這個法術有破壞地表的副作用，所以 Dark Kingdom 的法術工程師要把所有 $n$ 個城市用環狀的路徑串接起來。</p>
-<p><img src="/images/TIOJ-1130a.png" alt=""></p>
-<p>如圖，在這個傳送系統完成之後，彼得要從 $3$ 到 $2$（藍色的線），雖然要傳送 $5$ 次，但是還是比騎馬直接過去快多了，不過彼得覺得走這樣一趟就要付 $5$ 元實在是很貴。有一天彼得在傳送的時候睡著了，他醒過來的時候剛好在 $2$，只是不知道已經環遊 Dark Kingdom 多少次了；但是當他要付錢離開傳送站的時候發現還是只要付 $5$ 元！<br>聰明的彼得發現，進傳送站時拿的水晶，不是紀錄傳送了幾次，而是從哪個城進站。另一天彼得進入 $3$ 的傳送站時，遇到了一個要從 $1$ 到 $4$（紅線）的朋友，他就提議兩個人交換水晶，結果兩個人竟然都只要付 $1$ 元（綠線）！</p>
-<p>印證了自己的想法之後，彼得就開始號召了 $m$ 個人參加這個行動，你的工作是寫一個程式，幫彼得計算他可以幫大家省多少錢。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可以想到一個顯然的greedy解，就是對於每一個起點搜最近的終點，看起來似乎要$O(nlogn)$做二分搜，然後就會發現使用爬行法可以做到$O(n)$</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,tmp,ans,s[<span class="number">30010</span>],e[<span class="number">30010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;s[i]&gt;&gt;e[i];</span><br><span class="line">			tmp=e[i]-s[i];</span><br><span class="line">			<span class="keyword">if</span>(tmp&lt;<span class="number">0</span>)</span><br><span class="line">				tmp+=n;</span><br><span class="line">			ans+=tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(e,e+m);</span><br><span class="line">		sort(s,s+m);</span><br><span class="line">		tmp=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">			<span class="keyword">while</span>(e[tmp]&lt;s[i]||e[tmp]==<span class="number">-1</span>)&#123;</span><br><span class="line">				tmp++;</span><br><span class="line">				<span class="keyword">if</span>(tmp&gt;=m)&#123;</span><br><span class="line">					tmp=<span class="number">0</span>;</span><br><span class="line">					s[i]-=n;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			ans-=e[tmp]-s[i];</span><br><span class="line">			e[tmp]=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1236,7 +1236,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1249,7 +1249,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1293,12 +1293,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">56k</span>
+    <span title="Symbols count total">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">51 mins.</span>
+    <span title="Reading time total">55 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
