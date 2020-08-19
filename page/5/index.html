@@ -197,6 +197,192 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1291.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1291.html" class="post-title-link" itemprop="url">TIOJ-1291</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 21:05:21" itemprop="dateCreated datePublished" datetime="2018-11-04T21:05:21Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 12:59:48" itemprop="dateModified" datetime="2020-07-10T12:59:48Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>756</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1291-G-N-箱M-球"><a href="#1291-G-N-箱M-球" class="headerlink" title="1291 . G.N 箱M 球"></a>1291 . G.N 箱M 球</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1291" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1291</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>$n$個相同的箱子要放入$m$個不同的球，問有幾種放法。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>剛考完排組段考就看到這題OAO</p>
+<p>遞迴式不難推，令<code>dp[i][j]``表示$i$箱$j$球的放法數，那麼顯然有</code>dp[i][j]=dp[i][j-1]\times i+dp[i-1][j-1]`，因為她的前一步有可能是在$i$個箱子中隨便找一個放、或是自己放進一個空箱</p>
+<p>然後我就WA了</p>
+<p>原因是所求並不是<code>dp[n][m]</code>，而是<code>dp[1][m]+dp[2][m]+...+dp[n][m]</code>，因為剛剛說的是$i$箱都有球的狀況，但也可能有某些是空的，所以要把沒有每箱都有球的況狀加進去</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,m,dp[<span class="number">300</span>][<span class="number">300</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">200</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">200</span>;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==j&amp;&amp;j==<span class="number">1</span>)</span><br><span class="line">				dp[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dp[i][j]=(dp[i][j<span class="number">-1</span>]*i+dp[i<span class="number">-1</span>][j<span class="number">-1</span>])%<span class="number">1000000</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">200</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">200</span>;j++)</span><br><span class="line">			dp[i][j]=(dp[i][j]+dp[i<span class="number">-1</span>][j])%<span class="number">1000000</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&amp;&amp;n)</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;dp[n][m]&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1268.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1268.html" class="post-title-link" itemprop="url">TIOJ-1268</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-04 18:52:18" itemprop="dateCreated datePublished" datetime="2018-11-04T18:52:18Z">2018-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 13:00:06" itemprop="dateModified" datetime="2020-07-10T13:00:06Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>944</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1268-得分高手-Master"><a href="#1268-得分高手-Master" class="headerlink" title="1268 . 得分高手 (Master)"></a>1268 . 得分高手 (Master)</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1268" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1268</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一個數字棋盤遊戲，一開始可在棋盤中任選一格為起點，並規定下一步只能選擇起點的右方或下方格子；選擇其中一個方向後，同樣只能自該選擇的格子選擇往右方或是下方的格子推進，依此類推繼續走下去，不能再回頭。每一個格子都有分數，選擇該格子就能取得上面的分數，但是分數有正得分也有負得分（扣分）。玩家可在任意時候決定不再繼續走，或是依規則走完所有能走的格子。以底下$3 \times 4$的棋盤為例，若選擇以第 $2$ 列第$1$行為起點，依序通過 $3 \rightarrow -1 \rightarrow 8 \rightarrow 6$，可得此棋盤最高可得分數 $16$。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-8	0	4	-4</span><br><span class="line"></span><br><span class="line">3	-1	-9	3</span><br><span class="line"></span><br><span class="line">-2	8	6	-1</span><br></pre></td></tr></table></figure>
+
+<p>給定棋盤上每一格的分數，請寫一個程式來找出最高可得分數。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一眼看以為是經典dp題，然後就吃WA了</p>
+<p>原來這題可以任選起點和終點QAQ</p>
+<p>不過基本上長的還是一樣，任選起點就是dp式會變成<code>dp[i][j]=max(dp[i-1][j],dp[i][j-1],0)+v[i][j]</code>，依序對應到從上面走下來、從左邊走過來、拿自己當起點；任選終點就是從輸出右下角變成輸出所有人的max而已</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> i=<span class="number">1</span>,j,n,m,p[<span class="number">3010</span>][<span class="number">3010</span>],maxu=<span class="number">-2147483648</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(;i&lt;=m;i++)</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;p[i][j];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            p[i][j]=<span class="built_in">max</span>(<span class="built_in">max</span>(p[i<span class="number">-1</span>][j],p[i][j<span class="number">-1</span>]),<span class="number">0</span>)+p[i][j];</span><br><span class="line">            maxu=<span class="built_in">max</span>(p[i][j],maxu);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;maxu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1225.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -941,104 +1127,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1400.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1400.html" class="post-title-link" itemprop="url">TIOJ-1400</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-10-28 18:58:18" itemprop="dateCreated datePublished" datetime="2018-10-28T18:58:18Z">2018-10-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-10 13:02:52" itemprop="dateModified" datetime="2020-07-10T13:02:52Z">2020-07-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1400-神秘的黑盒子"><a href="#1400-神秘的黑盒子" class="headerlink" title="1400 . 神秘的黑盒子"></a>1400 . 神秘的黑盒子</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1400" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1400</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有一個黑盒子支援 PUSH, GET, EXIT, END四種指令：</p>
-<p>PUSH $x$：將 $x$ 丟入黑盒子之中。</p>
-<p>GET：取出黑盒子當中第 $k$ 小的數字，其中 $k$ 是同一組測試資料中先前呼叫GET成功的次數$+1$，若找不到該數則什麼都不用操作，當作沒事一樣。</p>
-<p>EXIT：換一組測試資料，清空黑盒子。</p>
-<p>END：請結束程式。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題好可怕= =<br><img src="/images/TIOJ-1400a.png" alt=""><br>我的作法是開一個max heap，維護它的大小是$n$，那麼get的時候只要取他的<code>top</code>就好了，塞不進去的東西就放進一個min heap。</p>
-<p>雖說去年就想到這個做法了，可是之前一直用<code>string</code>去吃他的指令然後就大TLE，這次重寫用的是輸入優化，但是因為bug一大堆所以狂吃WA，最後的作法是<code>cin.get()``吃指令的第一個字元，</code>cin.ignore()``把多的東西拔掉，用原本的<code>cin</code>吃整數。這樣就可以AC了(所以說<code>cin</code>吃<code>string</code>是多慢啊？)</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;b;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,n=<span class="number">1</span>,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>.<span class="built_in">get</span>(a))&#123;</span><br><span class="line">		<span class="keyword">switch</span>(a)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'P'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">				s.push(x);</span><br><span class="line">				<span class="keyword">if</span>(s.<span class="built_in">size</span>()&gt;n)&#123;</span><br><span class="line">					b.push(s.top());</span><br><span class="line">					s.pop();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'G'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">if</span>(n&lt;=b.<span class="built_in">size</span>()+s.<span class="built_in">size</span>())&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;s.top()&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">					n++;</span><br><span class="line">					<span class="keyword">if</span>(s.<span class="built_in">size</span>()&lt;n&amp;&amp;!b.empty())&#123;</span><br><span class="line">						s.push(b.top());</span><br><span class="line">						b.pop();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'E'</span>:</span><br><span class="line">				<span class="built_in">cin</span>.<span class="built_in">get</span>(a);</span><br><span class="line">				<span class="keyword">if</span>(a==<span class="string">'N'</span>)</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="built_in">cin</span>.ignore();</span><br><span class="line">				<span class="keyword">while</span>(!b.empty())</span><br><span class="line">					b.pop();</span><br><span class="line">				<span class="keyword">while</span>(!s.empty())</span><br><span class="line">					s.pop();</span><br><span class="line">				n=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1104,7 +1196,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">51</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1117,7 +1209,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1161,12 +1253,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">66k</span>
+    <span title="Symbols count total">73k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:06</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
