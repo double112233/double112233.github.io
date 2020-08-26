@@ -197,6 +197,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1819.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1819.html" class="post-title-link" itemprop="url">TIOJ-1819</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-19 19:56:54" itemprop="dateCreated datePublished" datetime="2018-12-19T19:56:54Z">2018-12-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 12:53:57" itemprop="dateModified" datetime="2020-07-10T12:53:57Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1819-綿羊山"><a href="#1819-綿羊山" class="headerlink" title="1819 . 綿羊山"></a>1819 . 綿羊山</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1819" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1819</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有天你閒來沒事，所以你就去爬綿羊山(因為魯蛋沒開台)…</p>
+<p>但是你突然發現爬綿羊山好累…所以你決定算一下爬綿羊山浪費體力的程度是多少=w=<br>綿羊山其實是一座山脈，山地跟平地的交界處剛好都在數線上的整數座標上，爬綿羊山浪費體力的程度為”連續山地的數量”</p>
+<p>這時邪惡的小綿羊看到你在爬山，所以他決定派出$N$組軍隊，每組被分配到一個任務區間$i, j$，表示從座標 $i$ 一路改造到座標 $j$ ，軍隊會把$i$ 到 $j$ 之間的平地改造成山地、山地改造成平地。<br>每組軍隊改造完後都會有一個「爬綿羊山浪費體力的程度」。</p>
+<p>現在你想知道所有「爬綿羊山浪費體力的程度」中的最大值。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>這題想到解的時候很有趣，de完bug之後發現很毒瘤@@</p>
+<p>首先你會想到最顯然的解就是離散化之後開線段樹，樹上維護區間的答案以及這個區間左右是不是$1$，然後記得離散化的時候對於$[l,r]$要把$l-1,l,r,r+1$都進去離散化，這樣才不會把空白砍掉XDDD</p>
+<p>我最先想到的其實是第二個解，首先你會發現修改順序不影響最後浪費體力的程度，接著又發現兩個左右端點有重複的修改其實等價於一個修改，反向來說如果都不重複，那答案就會$+1$，所以就開一個<code>set</code>維護所有端點(左閉右開)，吃到一個詢問就去查現在的$[l,r)$在不在<code>set</code>裡，如果在就把<code>set</code>裡的拔掉，否則就加進去，那麼<code>set</code>3大小的一半就是當前的答案</p>
+<p>這題毒瘤的點在於，他給的區間不保證第一個值小於等於第二個OAO……</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,a,b,maxu=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		<span class="keyword">if</span>(a&gt;b)</span><br><span class="line">			swap(a,b);</span><br><span class="line">		<span class="keyword">if</span>(s.count(a))</span><br><span class="line">			s.erase(a);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			s.insert(a);</span><br><span class="line">		<span class="keyword">if</span>(s.count(b+<span class="number">1</span>))</span><br><span class="line">			s.erase(b+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			s.insert(b+<span class="number">1</span>);</span><br><span class="line">		maxu=<span class="built_in">max</span>(maxu,(<span class="keyword">int</span>)s.<span class="built_in">size</span>()/<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;maxu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1509.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1068,105 +1163,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1411.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1411.html" class="post-title-link" itemprop="url">TIOJ-1411</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-15 08:59:20" itemprop="dateCreated datePublished" datetime="2018-12-15T08:59:20Z">2018-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-10 12:55:34" itemprop="dateModified" datetime="2020-07-10T12:55:34Z">2020-07-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>991</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1411-Ragnarok"><a href="#1411-Ragnarok" class="headerlink" title="1411 . Ragnarök"></a>1411 . Ragnarök</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1411" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1411</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>諸神的黃昏（Ragnarök）是北歐神話的預言中註定要降臨的末日劫難，也是日爾曼民族的神話與其他民族神話最富悲劇特色的區別。</p>
-<p>不同其他神話傳說用大篇幅敘述神對世界的創造，北歐神話用最濃重的筆墨描繪了包括諸神在內都必須面對的宇宙毀滅。</p>
-<p>經過研究你得知還是有解決的辦法！那就是維護天神間的平衡。</p>
-<p>北歐諸神神座的位置相當有趣，是呈一條長鏈狀。</p>
-<p>諸神又分為三種：天神、冥神以及土地神。</p>
-<p>而諸神的黃昏則是因為天神與冥神之間的數量不平衡所引發。</p>
-<p>你發現最後的方法就是保留某區段的神明，使其區段保持平衡，但相對的必須捨棄掉剩下的那些神明。</p>
-<p>又因為能量的關係，你最多只能保留一區段的神明。</p>
-<p>現在諸神的黃昏來了！你最多能拯救多少神明呢？</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>給你一個序列，問你可以正負元素數量相等的區間長度的最大值</p>
-<p>我的作法是先把正的全部變成$1$，負的全部變成$-1$，之後考慮他的前綴$a_i$，若$a_l=a_r$，表示$(l,r]$的區間和是$0$，所以對於每個前綴去記錄他第一次出現的位置就可以應付了</p>
-<p>如果偷懶可以用<code>map</code>，可是事實上你會發現可能的前綴只有$10^6$個，所以開個陣列也行，但是因為前綴有正有負所以需要做奇怪的處理</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,a,b,maxu,m[<span class="number">3000000</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3000000</span>;i++)</span><br><span class="line">            m[i]=<span class="number">0</span>;</span><br><span class="line">        maxu=a=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;b;</span><br><span class="line">            <span class="keyword">if</span>(b&gt;<span class="number">0</span>)</span><br><span class="line">                a++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(b&lt;<span class="number">0</span>)</span><br><span class="line">                a--;</span><br><span class="line">            <span class="keyword">if</span>(a==<span class="number">0</span>)</span><br><span class="line">                maxu=<span class="built_in">max</span>(maxu,i);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(m[a+<span class="number">1000010</span>]==<span class="number">0</span>)</span><br><span class="line">                m[a+<span class="number">1000010</span>]=i;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                maxu=<span class="built_in">max</span>(maxu,i-m[a+<span class="number">1000010</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;maxu&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1236,7 +1232,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1249,7 +1245,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1293,12 +1289,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">73k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:06</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

@@ -197,6 +197,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1411.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1411.html" class="post-title-link" itemprop="url">TIOJ-1411</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-15 08:59:20" itemprop="dateCreated datePublished" datetime="2018-12-15T08:59:20Z">2018-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 12:55:34" itemprop="dateModified" datetime="2020-07-10T12:55:34Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>991</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1411-Ragnarok"><a href="#1411-Ragnarok" class="headerlink" title="1411 . Ragnarök"></a>1411 . Ragnarök</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1411" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1411</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>諸神的黃昏（Ragnarök）是北歐神話的預言中註定要降臨的末日劫難，也是日爾曼民族的神話與其他民族神話最富悲劇特色的區別。</p>
+<p>不同其他神話傳說用大篇幅敘述神對世界的創造，北歐神話用最濃重的筆墨描繪了包括諸神在內都必須面對的宇宙毀滅。</p>
+<p>經過研究你得知還是有解決的辦法！那就是維護天神間的平衡。</p>
+<p>北歐諸神神座的位置相當有趣，是呈一條長鏈狀。</p>
+<p>諸神又分為三種：天神、冥神以及土地神。</p>
+<p>而諸神的黃昏則是因為天神與冥神之間的數量不平衡所引發。</p>
+<p>你發現最後的方法就是保留某區段的神明，使其區段保持平衡，但相對的必須捨棄掉剩下的那些神明。</p>
+<p>又因為能量的關係，你最多只能保留一區段的神明。</p>
+<p>現在諸神的黃昏來了！你最多能拯救多少神明呢？</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>給你一個序列，問你可以正負元素數量相等的區間長度的最大值</p>
+<p>我的作法是先把正的全部變成$1$，負的全部變成$-1$，之後考慮他的前綴$a_i$，若$a_l=a_r$，表示$(l,r]$的區間和是$0$，所以對於每個前綴去記錄他第一次出現的位置就可以應付了</p>
+<p>如果偷懶可以用<code>map</code>，可是事實上你會發現可能的前綴只有$10^6$個，所以開個陣列也行，但是因為前綴有正有負所以需要做奇怪的處理</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,a,b,maxu,m[<span class="number">3000000</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3000000</span>;i++)</span><br><span class="line">            m[i]=<span class="number">0</span>;</span><br><span class="line">        maxu=a=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;b;</span><br><span class="line">            <span class="keyword">if</span>(b&gt;<span class="number">0</span>)</span><br><span class="line">                a++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(b&lt;<span class="number">0</span>)</span><br><span class="line">                a--;</span><br><span class="line">            <span class="keyword">if</span>(a==<span class="number">0</span>)</span><br><span class="line">                maxu=<span class="built_in">max</span>(maxu,i);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(m[a+<span class="number">1000010</span>]==<span class="number">0</span>)</span><br><span class="line">                m[a+<span class="number">1000010</span>]=i;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                maxu=<span class="built_in">max</span>(maxu,i-m[a+<span class="number">1000010</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;maxu&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1408.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1053,102 +1152,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1355.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1355.html" class="post-title-link" itemprop="url">TIOJ-1355</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-04 21:10:26" itemprop="dateCreated datePublished" datetime="2018-11-04T21:10:26Z">2018-11-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-29 06:22:14" itemprop="dateModified" datetime="2020-06-29T06:22:14Z">2020-06-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>868</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1355-河內之塔-蘿莉塔"><a href="#1355-河內之塔-蘿莉塔" class="headerlink" title="1355 . 河內之塔-蘿莉塔"></a>1355 . 河內之塔-蘿莉塔</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1355" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1355</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>傳說在古老的印度，有一座神廟，據說它是宇宙的中心。</p>
-<p>在廟宇中放置了一塊上面插有三根長木釘的木板，在其中的一根木釘上，從上至下被放置了$64$片直徑由小至大的圓環形金屬片。</p>
-<p>古印度教的天神指示祂的僧侶們將$64$片的金屬片移至三根木釘中的其中一根上。</p>
-<p>規定在每次的移動中，只能搬移一片金屬片，並且在過程中必須保持金屬片由上至下是直徑由小至大的次序，也就是說不論在那一根木釘上，圓環形的金屬片都是直徑較小的被放在上層。</p>
-<p>直到有一天，僧侶們能將$64$片的金屬片依規則從指定的木釘上全部移動至另一根木釘上，那麼，世界末日即隨之來到，世間的一切終將被毀滅，萬物都將至極樂世界。</p>
-<p>僧侶極希望能早點結束這繁重的工作，於是來求助於你，要如何才能有效率的進行這工作呢？</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我是在清大才知道這是經典遞迴題@@</p>
-<p>move(n,x,y)表示有$n$個盤子要從$x$移到$y$，那麼顯然就是先把$n-1$個移到不是$x$也不是$y$的那個那根柱子，然後把一個從$x$移到$y$，之後再把那$n-1$個從另一根移回來</p>
-<p>然後如果只有一個的就可以直接輸出了</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> c;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line">		c++;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"#"</span>&lt;&lt;c&lt;&lt;<span class="string">" : move the dish from #"</span>&lt;&lt;x&lt;&lt;<span class="string">" to #"</span>&lt;&lt;y&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">move</span>(n<span class="number">-1</span>,x,<span class="number">6</span>-x-y);</span><br><span class="line">	<span class="built_in">move</span>(<span class="number">1</span>,x,y);</span><br><span class="line">	<span class="built_in">move</span>(n<span class="number">-1</span>,<span class="number">6</span>-x-y,y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">move</span>(n,<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1218,7 +1221,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1231,7 +1234,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1275,12 +1278,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">73k</span>
+    <span title="Symbols count total">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:06</span>
+    <span title="Reading time total">1:12</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
