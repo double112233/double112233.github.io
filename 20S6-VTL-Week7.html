@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-tw,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="tYhzf_jDh9TwymtplCQIvcYMQO5Cs8DkMk_VCWGdXGM">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"double112233.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="概述我覺得這隊的基底還行吧，雖然說太臨時了完成度蠻爛的，但是修改之後搞不好會是可用的東西 組隊歷程這週打的是LOA的葉家宏，話說他前幾週幾乎都出同一隊，只是換新規就無從針對了&#x3D;ㄦ&#x3D; 但是他出過Angus的指導蛋，我不想打蛋隊…… 在跟隊友討論之後，我認為蛋隊的解法大概就是：  聖劍&#x2F;DD金鉤臂：你變小我不管 劇毒：你回血也沒用的ㄏㄏ 滅歌：我就看你三回合能搞出什麼事  一開始的想法是用方案1.，圍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VTL第七週-絕對零度作為冰招卻不雙剋烈空座">
+<meta property="og:url" content="https://double112233.github.io/20S6-VTL-Week7.html">
+<meta property="og:site_name" content="Double的Code收藏區">
+<meta property="og:description" content="概述我覺得這隊的基底還行吧，雖然說太臨時了完成度蠻爛的，但是修改之後搞不好會是可用的東西 組隊歷程這週打的是LOA的葉家宏，話說他前幾週幾乎都出同一隊，只是換新規就無從針對了&#x3D;ㄦ&#x3D; 但是他出過Angus的指導蛋，我不想打蛋隊…… 在跟隊友討論之後，我認為蛋隊的解法大概就是：  聖劍&#x2F;DD金鉤臂：你變小我不管 劇毒：你回血也沒用的ㄏㄏ 滅歌：我就看你三回合能搞出什麼事  一開始的想法是用方案1.，圍">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://double112233.github.io/images/20S6-VTL-Week7-TeamBuilding-1.png">
+<meta property="og:image" content="https://double112233.github.io/images/20S6-VTL-Week7-TeamBuilding-2.png">
+<meta property="og:image" content="https://double112233.github.io/images/20S6-VTL-Week7-TeamBuilding-3.png">
+<meta property="og:image" content="https://double112233.github.io/images/20S6-VTL-Week7-TeamBuilding-4.png">
+<meta property="article:published_time" content="2020-09-03T00:30:00.000Z">
+<meta property="article:modified_time" content="2020-09-03T12:31:19.967Z">
+<meta property="article:author" content="Double Wang">
+<meta property="article:tag" content="Gen8">
+<meta property="article:tag" content="VGC2020">
+<meta property="article:tag" content="花療環環">
+<meta property="article:tag" content="鐵蟻">
+<meta property="article:tag" content="VTL">
+<meta property="article:tag" content="拉普拉斯">
+<meta property="article:tag" content="2020_Season6">
+<meta property="article:tag" content="歌德小姐">
+<meta property="article:tag" content="魔靈珊瑚">
+<meta property="article:tag" content="龐岩怪">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://double112233.github.io/images/20S6-VTL-Week7-TeamBuilding-1.png">
+
+<link rel="canonical" href="https://double112233.github.io/20S6-VTL-Week7.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>VTL第七週-絕對零度作為冰招卻不雙剋烈空座 | Double的Code收藏區</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Double的Code收藏區</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <a>
+        <img class="custom-logo-image" src="/images/selfie.jpg" alt="Double的Code收藏區">
+      </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/20S6-VTL-Week7.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VTL第七週-絕對零度作為冰招卻不雙剋烈空座
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-03 00:30:00 / Modified: 12:31:19" itemprop="dateCreated datePublished" datetime="2020-09-03T00:30:00Z">2020-09-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VGC-Report/" itemprop="url" rel="index"><span itemprop="name">VGC戰報</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我覺得這隊的基底還行吧，雖然說太臨時了完成度蠻爛的，但是修改之後搞不好會是可用的東西</p>
+<h3 id="組隊歷程"><a href="#組隊歷程" class="headerlink" title="組隊歷程"></a>組隊歷程</h3><p>這週打的是LOA的葉家宏，話說他前幾週幾乎都出同一隊，只是換新規就無從針對了=ㄦ=</p>
+<p>但是他出過Angus的指導蛋，我不想打蛋隊……</p>
+<p>在跟隊友討論之後，我認為蛋隊的解法大概就是：</p>
+<ol>
+<li>聖劍/DD金鉤臂：你變小我不管</li>
+<li>劇毒：你回血也沒用的ㄏㄏ</li>
+<li>滅歌：我就看你三回合能搞出什麼事</li>
+</ol>
+<p>一開始的想法是用方案1.，圍攻手選擇狃拉的話還可以順便入炭山，那能跟炭山聯防的就是草鹿了（岩牛弱水鋼羊弱地），這三隻敲定之後就開始找隊友，在最後關頭，隊友需要滿足這些條件：</p>
+<ol>
+<li>反空間</li>
+<li>防睡</li>
+<li>能解水主和鷹人（這兩隻順風後都比炭山草鹿快而且都有飛招+水/地招）</li>
+</ol>
+<p>簡單研究之後就長這樣了</p>
+<p><img src="/images/20S6-VTL-Week7-TeamBuilding-1.png" alt=""></p>
+<p>海膽負責防睡，但基於海膽達人帶極巨水砲打超甲無法確一，所以加入了草鋼一起解超甲。</p>
+<p>這隊最大的問題是高速開的時候力度不太夠，尤其如果因為屬性關係去選擇了狃拉+皮皮+草鹿炭山擇一的話最後一隻常常沒做事。基於時間關係改不動就放棄了</p>
+<p>之後想要嘗試劇毒，但是也找不到順手的劇毒手，在最後的最後看到友亮師傅在直播蘋果龍隊，突然想到那篇戰報裡有一個鐵蟻滅歌的隊伍，覺得可行就跑來實測了</p>
+<p><img src="/images/20S6-VTL-Week7-TeamBuilding-2.png" alt=""></p>
+<p>但是班班和多龍已經被ban了，多龍作為第二極巨走向而且可以和拉普配合用冰礫跳弱保，因此選用鷹人作為替代，同時捨棄了格招改成火拳來打同類鐵蟻</p>
+<p>班班的部分師傅說是為了鐵蟻歌德開的時候撞到火系可以收鐵蟻開空間強推，那我就選了有客家班班之稱的龐岩怪（這段真的有夠不耗腦，正常情況應該比較一下超甲、龐岩和呆呆王的優劣才對啊）</p>
+<p><img src="/images/20S6-VTL-Week7-TeamBuilding-3.png" alt=""></p>
+<p>開賽前幾分鐘，有鑒於我真的不太會控滅歌，就把鷹人拔掉改成花環+弱證拉普的第三強攻軸</p>
+<p><img src="/images/20S6-VTL-Week7-TeamBuilding-4.png" alt=""></p>
+<h2 id="個別解說"><a href="#個別解說" class="headerlink" title="個別解說"></a>個別解說</h2><h3 id="鐵蟻"><a href="#鐵蟻" class="headerlink" title="鐵蟻"></a>鐵蟻</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Durant @ Life Orb  </span><br><span class="line">Ability: Hustle  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 36 HP &#x2F; 252 Atk &#x2F; 4 Def &#x2F; 4 SpD &#x2F; 212 Spe  </span><br><span class="line">Jolly Nature  </span><br><span class="line">- Iron Head  </span><br><span class="line">- Rock Slide  </span><br><span class="line">- X-Scissor  </span><br><span class="line">- Protect</span><br></pre></td></tr></table></figure>
+
+<p>友亮師傅牌鐵蟻，放棄跟同類抽速而是稍微顧了一點耐力的類型。</p>
+<p>我蠻喜歡這隻鐵蟻的努力值的，鐵蟻+歌德開看到火系就收帖以上空間的作法我也很喜歡，目前還在跟師父討論這個位置換成PZ能不能更有穿透性，但是聯防面的部分也要再思考</p>
+<h3 id="歌德小姐"><a href="#歌德小姐" class="headerlink" title="歌德小姐"></a>歌德小姐</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Gothitelle @ Colbur Berry  </span><br><span class="line">Ability: Shadow Tag  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 100 Def &#x2F; 156 SpD  </span><br><span class="line">Sassy Nature  </span><br><span class="line">IVs: 0 Spe  </span><br><span class="line">- Fake Out  </span><br><span class="line">- Trick Room  </span><br><span class="line">- Expanding Force  </span><br><span class="line">- Protect</span><br></pre></td></tr></table></figure>
+
+<p>道具選擇抗惡而不是抗幽是因為多龍消失之後高速鬼招應該會減少，而抗惡可以在惡熊面前不懦弱架空間</p>
+<p>招式的部分把幫手改成廣戰是希望有點傷害，但因為這隊並不是那麼滅歌向，把守住改回幫手應該會是比較正確的選擇</p>
+<h3 id="拉普拉斯"><a href="#拉普拉斯" class="headerlink" title="拉普拉斯"></a>拉普拉斯</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Lapras-Gmax @ Weakness Policy  </span><br><span class="line">Ability: Water Absorb  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 212 HP &#x2F; 4 Def &#x2F; 196 SpA &#x2F; 4 SpD &#x2F; 92 Spe  </span><br><span class="line">Modest Nature  </span><br><span class="line">IVs: 0 Atk  </span><br><span class="line">- Protect  </span><br><span class="line">- Hydro Pump  </span><br><span class="line">- Freeze-Dry  </span><br><span class="line">- Thunderbolt</span><br></pre></td></tr></table></figure>
+
+<p>上週的同款拉普只是改成了弱保型最大化輸出，但我也覺得拉普的開牆和滅歌是合的，所以要不要裝個滅歌我覺得不好說</p>
+<h3 id="魔靈珊瑚"><a href="#魔靈珊瑚" class="headerlink" title="魔靈珊瑚"></a>魔靈珊瑚</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cursola @ Big Root  </span><br><span class="line">Ability: Perish Body  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 220 Def &#x2F; 36 SpA  </span><br><span class="line">Quiet Nature  </span><br><span class="line">IVs: 0 Atk &#x2F; 0 Spe  </span><br><span class="line">- Shadow Ball  </span><br><span class="line">- Will-O-Wisp  </span><br><span class="line">- Strength Sap  </span><br><span class="line">- Perish Song</span><br></pre></td></tr></table></figure>
+
+<p>其實我蠻不會控珊瑚的，事實上珊瑚的輸出應該是兼具輸出和拖回合的選擇，如果能用得更好的話搞不好這場比賽的結果就會不一樣了</p>
+<h3 id="龐岩怪"><a href="#龐岩怪" class="headerlink" title="龐岩怪"></a>龐岩怪</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Gigalith @ Lum Berry  </span><br><span class="line">Ability: Sturdy  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 252 Atk &#x2F; 4 SpD  </span><br><span class="line">Brave Nature  </span><br><span class="line">IVs: 0 Spe  </span><br><span class="line">- Protect  </span><br><span class="line">- Rock Slide  </span><br><span class="line">- Earthquake  </span><br><span class="line">- Body Press</span><br></pre></td></tr></table></figure>
+
+<p>道具選了木子果來防燒傷和睡眠，我覺得這隻龐岩怪從測試到實戰都算是超出我的預期，但超甲會不會更好可能還需要更多的實測</p>
+<h3 id="花療環環"><a href="#花療環環" class="headerlink" title="花療環環"></a>花療環環</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Comfey @ Focus Sash  </span><br><span class="line">Ability: Triage  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 188 HP &#x2F; 4 Def &#x2F; 252 SpA &#x2F; 4 SpD &#x2F; 60 Spe  </span><br><span class="line">Timid Nature  </span><br><span class="line">IVs: 0 Atk  </span><br><span class="line">- Draining Kiss  </span><br><span class="line">- Floral Healing  </span><br><span class="line">- Giga Drain  </span><br><span class="line">- Trick Room  </span><br></pre></td></tr></table></figure>
+
+<p>久違的環環，努力值是緊急抄的沒什麼想法，之後可能會在改成喜歡的樣子吧</p>
+<h2 id="檢討"><a href="#檢討" class="headerlink" title="檢討"></a>檢討</h2><h3 id="隊伍問題"><a href="#隊伍問題" class="headerlink" title="隊伍問題"></a>隊伍問題</h3><p>我對這隊的不滿意程度比Week 1那隊還大@@</p>
+<p>我覺得在改東西的時候犧牲太多整體性了，大致上可以分為以下幾點：</p>
+<ol>
+<li>鐵蟻內戰無解：鐵蟻都調成非頂速不要抽內戰了還把火招拔掉超哈囉</li>
+<li>滅歌和強攻軸都沒有貫徹：鐵蟻脫離了極巨化會很雷，所以才要加入重力或者滅歌來清場，但這隊沒有重力滅歌又拔了一半，導致末盤鐵蟻非常的雷；還有之前說的不想唱滅歌的話歌德應該要幫手，想唱滅歌的話拉普就一定得配滅歌</li>
+</ol>
+<h3 id="G1"><a href="#G1" class="headerlink" title="G1"></a>G1</h3><p>沒想法@@，我不想打極光幕、我不想看到火系、我不想打黏龍、我不要跟花環猜拳</p>
+<h4 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h4><p>從T2的傷害線可以知道巨格可以打到殘，那珊瑚就應該點影球補刀而不是去按那個很哈囉的鬼火</p>
+<h4 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h4><p>不用巨格了反正他殘血，像師父說的應該考慮穿透性去點巨岩抓後面的東西</p>
+<h3 id="G3"><a href="#G3" class="headerlink" title="G3"></a>G3</h3><h4 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h4><p>巨岩要點花環第一個防止他反開空間，第二個這回合打黏龍一半下回合花環回血會很頭痛</p>
+<h4 id="T5、T6"><a href="#T5、T6" class="headerlink" title="T5、T6"></a>T5、T6</h4><p>這邊的-2龐岩其實做不了事的，應該果斷收走把鐵蟻賣掉之後反開空間岩崩取勝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">Durant @ Life Orb  </span><br><span class="line">Ability: Hustle  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 36 HP &#x2F; 252 Atk &#x2F; 4 Def &#x2F; 4 SpD &#x2F; 212 Spe  </span><br><span class="line">Jolly Nature  </span><br><span class="line">- Iron Head  </span><br><span class="line">- Rock Slide  </span><br><span class="line">- X-Scissor  </span><br><span class="line">- Protect</span><br><span class="line"></span><br><span class="line">Gothitelle @ Colbur Berry  </span><br><span class="line">Ability: Shadow Tag  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 100 Def &#x2F; 156 SpD  </span><br><span class="line">Sassy Nature  </span><br><span class="line">IVs: 0 Spe  </span><br><span class="line">- Fake Out  </span><br><span class="line">- Trick Room  </span><br><span class="line">- Expanding Force  </span><br><span class="line">- Protect  </span><br><span class="line"></span><br><span class="line">Lapras-Gmax @ Weakness Policy  </span><br><span class="line">Ability: Water Absorb  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 212 HP &#x2F; 4 Def &#x2F; 196 SpA &#x2F; 4 SpD &#x2F; 92 Spe  </span><br><span class="line">Modest Nature  </span><br><span class="line">IVs: 0 Atk  </span><br><span class="line">- Protect  </span><br><span class="line">- Hydro Pump  </span><br><span class="line">- Freeze-Dry  </span><br><span class="line">- Thunderbolt  </span><br><span class="line"></span><br><span class="line">Cursola @ Big Root  </span><br><span class="line">Ability: Perish Body  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 220 Def &#x2F; 36 SpA  </span><br><span class="line">Quiet Nature  </span><br><span class="line">IVs: 0 Atk &#x2F; 0 Spe  </span><br><span class="line">- Shadow Ball  </span><br><span class="line">- Will-O-Wisp  </span><br><span class="line">- Strength Sap  </span><br><span class="line">- Perish Song  </span><br><span class="line"></span><br><span class="line">Gigalith @ Lum Berry  </span><br><span class="line">Ability: Sturdy  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 252 HP &#x2F; 252 Atk &#x2F; 4 SpD  </span><br><span class="line">Brave Nature  </span><br><span class="line">IVs: 0 Spe  </span><br><span class="line">- Protect  </span><br><span class="line">- Rock Slide  </span><br><span class="line">- Earthquake  </span><br><span class="line">- Body Press  </span><br><span class="line"></span><br><span class="line">Comfey @ Focus Sash  </span><br><span class="line">Ability: Triage  </span><br><span class="line">Level: 50  </span><br><span class="line">EVs: 188 HP &#x2F; 4 Def &#x2F; 252 SpA &#x2F; 4 SpD &#x2F; 60 Spe  </span><br><span class="line">Timid Nature  </span><br><span class="line">IVs: 0 Atk  </span><br><span class="line">- Draining Kiss  </span><br><span class="line">- Floral Healing  </span><br><span class="line">- Giga Drain  </span><br><span class="line">- Trick Room  </span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Gen8/" rel="tag"><i class="fa fa-tag"></i> Gen8</a>
+              <a href="/tags/VGC2020/" rel="tag"><i class="fa fa-tag"></i> VGC2020</a>
+              <a href="/tags/Comfey/" rel="tag"><i class="fa fa-tag"></i> 花療環環</a>
+              <a href="/tags/Durant/" rel="tag"><i class="fa fa-tag"></i> 鐵蟻</a>
+              <a href="/tags/VTL/" rel="tag"><i class="fa fa-tag"></i> VTL</a>
+              <a href="/tags/Lapras/" rel="tag"><i class="fa fa-tag"></i> 拉普拉斯</a>
+              <a href="/tags/2020-Season6/" rel="tag"><i class="fa fa-tag"></i> 2020_Season6</a>
+              <a href="/tags/Gothitelle/" rel="tag"><i class="fa fa-tag"></i> 歌德小姐</a>
+              <a href="/tags/Cursola/" rel="tag"><i class="fa fa-tag"></i> 魔靈珊瑚</a>
+              <a href="/tags/Gigalith/" rel="tag"><i class="fa fa-tag"></i> 龐岩怪</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/20S5-VTL-Week5-and-Week6.html" rel="prev" title="VTL第五週-凍結白龍的絕對零度 & VTL第六週-絕對零度命中了草蛇">
+      <i class="fa fa-chevron-left"></i> VTL第五週-凍結白龍的絕對零度 & VTL第六週-絕對零度命中了草蛇
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#組隊歷程"><span class="nav-number">1.1.</span> <span class="nav-text">組隊歷程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#個別解說"><span class="nav-number">2.</span> <span class="nav-text">個別解說</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#鐵蟻"><span class="nav-number">2.1.</span> <span class="nav-text">鐵蟻</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#歌德小姐"><span class="nav-number">2.2.</span> <span class="nav-text">歌德小姐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉普拉斯"><span class="nav-number">2.3.</span> <span class="nav-text">拉普拉斯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#魔靈珊瑚"><span class="nav-number">2.4.</span> <span class="nav-text">魔靈珊瑚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#龐岩怪"><span class="nav-number">2.5.</span> <span class="nav-text">龐岩怪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#花療環環"><span class="nav-number">2.6.</span> <span class="nav-text">花療環環</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#檢討"><span class="nav-number">3.</span> <span class="nav-text">檢討</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隊伍問題"><span class="nav-number">3.1.</span> <span class="nav-text">隊伍問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1"><span class="nav-number">3.2.</span> <span class="nav-text">G1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#T3"><span class="nav-number">3.2.1.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T5"><span class="nav-number">3.2.2.</span> <span class="nav-text">T5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G3"><span class="nav-number">3.3.</span> <span class="nav-text">G3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#T2"><span class="nav-number">3.3.1.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T5、T6"><span class="nav-number">3.3.2.</span> <span class="nav-text">T5、T6</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Double Wang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/double112233" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;double112233" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100013220112763" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100013220112763" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Double Wang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">82k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:15</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://double112233.github.io/20S6-VTL-Week7.html',]
+      });
+      });
+  </script>
+
+</body>
+</html>

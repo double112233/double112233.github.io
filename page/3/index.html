@@ -197,6 +197,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1865.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1865.html" class="post-title-link" itemprop="url">TIOJ-1865</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-19 21:19:58" itemprop="dateCreated datePublished" datetime="2018-12-19T21:19:58Z">2018-12-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-23 12:51:49" itemprop="dateModified" datetime="2020-06-23T12:51:49Z">2020-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>807</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1865-小向的魔法術鬣"><a href="#1865-小向的魔法術鬣" class="headerlink" title="1865 . 小向的魔法術鬣"></a>1865 . 小向的魔法術鬣</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1865" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1865</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>還記得小向嗎？對，就是那個天龍國的天才魔法少女。<br>身為天龍國的魔法少女，研究一兩種魔法術鬣是一定要的，小向常常窩在魔法書堆裡面研究她抓到的魔法術鬣。<br>有天，小向發現了一種奇特的魔法術鬣，她決定要好好的跟她的新術鬣玩一下。</p>
+<p><img src="/images/TIOJ-1865a.jpg" alt=""></p>
+<p>這時候問題就來了，<br>我們都知道，魔法術鬣是種脾氣很壞的魔法生物，他們常常會很亂又很長，但是要是不找出他們的規律，小向就會很煩躁導致一整週失眠。<br>還好小向已經發現一種簡化魔法術鬣的方法了。<br>魔法術鬣是由一長串的魔法整數構成的，而小向有兩種魔法可以幫助她簡化魔法術鬣，分別是：</p>
+<ol>
+<li>檢查魔法術鬣第$i$項是否可以整除第$i+1$項。</li>
+<li>把魔法術鬣第$i$項變成第$i$項和第$i+1$項的魔法最大公因數，把第$i+1$項變成第$i$項和第$i+1$項的魔法最小公倍數。</li>
+</ol>
+<p>只要讓魔法術鬣的每一項(最後一項除外)全部都可以整除他的下一項，小向就可以輕鬆的研究魔法術鬣了。</p>
+<p>小向為了要施魔法所以必須專心，於是她將操作和檢查的工作交給你，天龍國的魔法少女實習生，請你使用小向的魔法，簡化魔法術鬣。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先你會想說我們從前面往後檢查，如果有兩個數字不符合就用魔法換掉，可是由於這樣會讓前一項變少，所以要再往前檢查前一組會不會因此爛掉，然後你算一下就發現這樣次數就爆掉了</p>
+<p>接著你考慮最糟的情況(就是每次都要一路用魔法用到第$0$項的情況)，就會發現說在這種情況下，我把判斷跳過直接爆是好的，所以對於所有case都這樣做就沒了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"lib1865.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=GetN();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&gt;=<span class="number">0</span>;j--)</span><br><span class="line">			Magic_Operate(j);</span><br><span class="line">    End();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1819.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1062,107 +1160,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1416.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1416.html" class="post-title-link" itemprop="url">TIOJ-1416</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-15 10:07:40" itemprop="dateCreated datePublished" datetime="2018-12-15T10:07:40Z">2018-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-04 06:16:47" itemprop="dateModified" datetime="2020-07-04T06:16:47Z">2020-07-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>844</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1416-Interactive-Game-of-Stone"><a href="#1416-Interactive-Game-of-Stone" class="headerlink" title="1416 . [Interactive] Game of Stone"></a>1416 . [Interactive] Game of Stone</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1416" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1416</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>你有玩過TIOJ1087的取石頭嗎？</p>
-<p>現在有另外一個好玩的遊戲— 真。奇石頭</p>
-<p>這個遊戲只有一堆石頭，而且一定是奇數個。</p>
-<p>現在你與電腦輪流拿一或兩個石頭，直到拿完，最後手上石頭總數是奇數的人就贏了！</p>
-<p>這是一個互動題，請你先引入標頭檔#include “lib1416.h”，然後就可以用這些函數了!</p>
-<ul>
-<li><p>int Initialize()：請先呼叫Initialize將石頭堆好，並且他會回傳石頭的數量</p>
-</li>
-<li><p>int Take_Stone(int a)：將石頭拿出a個，a只能是$1$或$2$，並且不能拿超過石頭的數量，如果有違法情形，會直接判定WA，取完之後系統會回傳給你他要取多少。</p>
-</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>裸數學題</p>
-<p>在數讀的時候看到就開始做了，弄了老半天沒結果石博允一拿到就做完了，塞博好電&gt; &lt;</p>
-<p>這題在$4n+1$是先手必勝，$4n+3$後手必勝，從小數字做上來就有了，先手必勝的策略是拿掉兩個之後模仿對手的動作，直到剩不到三個時拿掉$1$個就有了</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"lib1416.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n=Initialize(),a;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line">  	Take_Stone(<span class="number">1</span>);</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">5</span>)&#123;</span><br><span class="line">  	Take_Stone(<span class="number">2</span>);</span><br><span class="line">  	Take_Stone(<span class="number">1</span>);</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  a=Take_Stone(<span class="number">2</span>);</span><br><span class="line">  n-=a+a+<span class="number">2</span>;</span><br><span class="line">  <span class="keyword">while</span>(n&gt;<span class="number">3</span>)&#123;</span><br><span class="line">    a=Take_Stone(a);</span><br><span class="line">    n-=a&lt;&lt;<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  Take_Stone(a);</span><br><span class="line">  Take_Stone(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1232,7 +1229,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1245,7 +1242,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1289,12 +1286,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">79k</span>
+    <span title="Symbols count total">82k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:12</span>
+    <span title="Reading time total">1:15</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
