@@ -197,6 +197,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1582.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1582.html" class="post-title-link" itemprop="url">TIOJ-1582</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-12 11:02:09" itemprop="dateCreated datePublished" datetime="2020-02-12T11:02:09Z">2020-02-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-24 12:21:39" itemprop="dateModified" datetime="2020-06-24T12:21:39Z">2020-06-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1582-A-TRIVIAL-physical-problem"><a href="#1582-A-TRIVIAL-physical-problem" class="headerlink" title="1582 . A TRIVIAL physical problem"></a>1582 . A TRIVIAL physical problem</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1582" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1582</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Have you ever heard the lesson called “WhileCome Physics”?</p>
+<p>The lesson is too hard to understand.<br>You will find the velocity of free fall with buoyancy and calculus.<br>IT’S SO TERRIBLE!!!</p>
+<p>But 楽しいです，the problem we will solve today is such a TRIVIAL problem.</p>
+<p>Now you have a polynomial function of velocity,<br>the only one mission you should solve is to find the function of acceleration!</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>實作題</p>
+<p>要把一個多項式微分，很明顯只要完成兩個步驟就好：</p>
+<ol>
+<li>把每一項分離成$a_nx^n$的形式</li>
+<li>$a_n$*=$n$,$n$- -</li>
+</ol>
+<p>第二步很顯然，第一步的話首先會想到用+-號拆出每一項，不過從範測就會知道踩到3x^-2這種項就爛掉了，所以很明顯^後面的-不能當作切開的地方，AC</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> t;</span><br><span class="line"><span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;pi&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">make_int</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>,neg=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (s[<span class="number">0</span>]==<span class="string">'-'</span>) &#123;</span><br><span class="line">        neg=<span class="number">-1</span>;</span><br><span class="line">        s=s.substr(<span class="number">1</span>,s.length()<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++) &#123;</span><br><span class="line">        ans=ans*<span class="number">10</span>+s[i]-<span class="string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans*neg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">derive</span><span class="params">(<span class="built_in">string</span> s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.back()==<span class="string">'x'</span>) &#123;<span class="comment">//一次項</span></span><br><span class="line">        p.push_back(&#123;<span class="number">0</span>,make_int(s.substr(<span class="number">0</span>,s.length()<span class="number">-1</span>))&#125;);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i]==<span class="string">'x'</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> a=make_int(s.substr(<span class="number">0</span>,i)),b=make_int(s.substr(i+<span class="number">2</span>,s.length()-i<span class="number">-2</span>));</span><br><span class="line">            a*=b;</span><br><span class="line">            b--;</span><br><span class="line">            p.push_back(&#123;b,a&#125;);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">(pi x, pi y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&gt;y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;t.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (t[i]==<span class="string">'+'</span>) &#123;</span><br><span class="line">            derive(t.substr(l,i-l));</span><br><span class="line">            l=i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (t[i]==<span class="string">'-'</span>&amp;&amp;(!i||t[i<span class="number">-1</span>]!=<span class="string">'^'</span>))&#123;</span><br><span class="line">            derive(t.substr(l,i-l));</span><br><span class="line">            l=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    derive(t.substr(l,t.length()-l));</span><br><span class="line">    sort(p.<span class="built_in">begin</span>(), p.<span class="built_in">end</span>(), cmp);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;p[<span class="number">0</span>].S;</span><br><span class="line">    <span class="keyword">if</span> (p[<span class="number">0</span>].F) &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"x^"</span>&lt;&lt;p[<span class="number">0</span>].F;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;p.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p[i].S==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p[i].S&gt;<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">'+'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p[i].S;</span><br><span class="line">        <span class="keyword">if</span> (p[i].F) &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"x^"</span>&lt;&lt;p[i].F;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1456.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1053,102 +1151,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1034.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1034.html" class="post-title-link" itemprop="url">TIOJ-1034</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-26 19:44:48" itemprop="dateCreated datePublished" datetime="2020-01-26T19:44:48Z">2020-01-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-27 12:11:06" itemprop="dateModified" datetime="2020-06-27T12:11:06Z">2020-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>2 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1034-搶救雷恩大兵-Saving-Ryan"><a href="#1034-搶救雷恩大兵-Saving-Ryan" class="headerlink" title="1034 . 搶救雷恩大兵 (Saving Ryan)"></a>1034 . 搶救雷恩大兵 (Saving Ryan)</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1034" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1034</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>米勒上尉收到一道緊急命令，要求將二等兵雷恩即刻護送至指定地點。米勒上尉馬上攤開戰場地圖，希望能規畫出一條最安全的路線。戰場地圖可視為一個 $N\times N$ 的表格，表格中的每個位置只可以往東、南、西、北四個鄰近的位置移動。根據情報，米勤上尉已經掌握每個位置的敵軍兵力，所謂最安全的路線，指的是這條路線上所有敵軍兵力總和最小的路線。</p>
-<p><img src="/images/TIOJ-1034a.png" alt=""></p>
-<p>以圖一為例，圖中的數字代表敵軍兵力。如果雷恩目前在 $(4, 1)$ 的位置，需要被護送到 $(1, 4)$ 的位置，則最安全的路線為 $(4, 1) \rightarrow (4, 2) \rightarrow (3, 2) \rightarrow (2, 2) \rightarrow (2, 3) \rightarrow (1, 3) \rightarrow (1, 4)$，路線上的敵軍兵力總數是 $2+1+1+2+3+3+1 = 13$。<br>由於雷恩非常重要，因此上級決定支援米勒上尉。米勒上尉可以用「一發」死光炸彈轟炸地圖上的「一個」位置，轟炸過後該位置的敵軍將灰飛湮滅。以圖二為例，如果米勒上尉轟炸了 $(2, 4)$ 位置，則新的最安全路線將變成$(4, 1) \rightarrow (4, 2) \rightarrow (4, 3) \rightarrow (4, 4) \rightarrow (3,4) \rightarrow (2, 4) \rightarrow (1, 4)$，路線上的敵軍兵力總數是 $2+1+1+1+1+0+1 = 7$。</p>
-<p>請撰寫一個程式，幫助米勒上尉找出在一發死光炸彈支援下，最安全路線的敵軍兵力總數。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一個要注意的是範圍，$N\leq 20$基本上可以$O(N^6)$，也就是說這題可以考慮各種暴力演算法</p>
-<p>接下來是範圍，很有趣的是他說$q\leq N^4$，由於詢問和維護的次數差太多了，預處理會是好選擇</p>
-<p>接下來就是愉快的拆解題目了</p>
-<p>首先無視可以炸掉某一格的部分，那我們可以用Floyd-Warshall做到$O(N^3)$預處理$O(1)$回答，那炸掉一格的做法就很明顯了：枚舉炸掉哪一格，答案是該格到起點的距離+該格到終點的距離-該格的點權</p>
-<p>不過Floyd-Warshall要求權重在邊上，這邊可以參考<a href="https://blog.ototot.tk/2017/02/tioj-1034-saving-ryan.html" target="_blank" rel="noopener">oToToT的神奇做法</a>，或是像我一樣枚舉中點的時候扣掉中點的權重就好了</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> F first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> S second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">2147483647</span>;</span><br><span class="line"><span class="keyword">int</span> n,g[<span class="number">25</span>][<span class="number">25</span>],p[<span class="number">500</span>],id[<span class="number">25</span>][<span class="number">25</span>],dis[<span class="number">500</span>][<span class="number">500</span>],q;</span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;pi,<span class="keyword">int</span>&gt;&gt; e;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n*n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n*n; j++) &#123;</span><br><span class="line">            dis[i][j]=inf;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;g[i][j];</span><br><span class="line">            id[i][j]=i*n+j;</span><br><span class="line">            p[id[i][j]]=g[i][j];</span><br><span class="line">            dis[id[i][j]][id[i][j]]=g[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i<span class="number">-1</span>&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                dis[id[i][j]][id[i<span class="number">-1</span>][j]]=p[id[i][j]]+p[id[i<span class="number">-1</span>][j]];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j<span class="number">-1</span>&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                dis[id[i][j]][id[i][j<span class="number">-1</span>]]=p[id[i][j]]+p[id[i][j<span class="number">-1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i+<span class="number">1</span>&lt;n)&#123;</span><br><span class="line">                dis[id[i][j]][id[i+<span class="number">1</span>][j]]=p[id[i][j]]+p[id[i+<span class="number">1</span>][j]];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j+<span class="number">1</span>&lt;n)&#123;</span><br><span class="line">                dis[id[i][j]][id[i][j+<span class="number">1</span>]]=p[id[i][j]]+p[id[i][j+<span class="number">1</span>]];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    n*=n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;n; k++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++) &#123;</span><br><span class="line">                dis[i][j]=<span class="built_in">min</span>(dis[i][j],dis[i][k]+dis[k][j]-p[k]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;q;</span><br><span class="line">    <span class="keyword">while</span> (q--) &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c,d,ans=inf;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d;</span><br><span class="line">        a--;</span><br><span class="line">        b--;</span><br><span class="line">        c--;</span><br><span class="line">        d--;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">            ans=<span class="built_in">min</span>(ans, dis[id[a][b]][i]+dis[i][id[c][d]]<span class="number">-2</span>*p[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1218,7 +1220,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1231,7 +1233,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1275,12 +1277,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:17</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

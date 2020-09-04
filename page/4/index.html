@@ -197,6 +197,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1441.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1441.html" class="post-title-link" itemprop="url">TIOJ-1441</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-15 13:47:49" itemprop="dateCreated datePublished" datetime="2018-12-15T13:47:49Z">2018-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-03 12:41:03" itemprop="dateModified" datetime="2020-07-03T12:41:03Z">2020-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1441-萬里長城"><a href="#1441-萬里長城" class="headerlink" title="1441 . 萬里長城"></a>1441 . 萬里長城</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1441" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1441</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img src="/images/TIOJ-1441a.jpg" alt=""></p>
+<p>你去過萬里長城嗎？</p>
+<p>秦始皇三十三年（前$214$年），秦始皇派大將蒙恬率領三十萬人北逐匈奴，佔據河套，並修築長城。</p>
+<p>「秦已併天下，乃使蒙恬將三十萬眾北逐戎狄，收河南。築長城，因地形，用制險塞，起臨洮，至遼東，延袤萬餘裏，於是渡河，據陽山，逶蛇而北。暴師於外十餘年。」（《史記·蒙恬列傳》）<br>秦長城把過去秦、趙、魏、燕長城連接起來，從臨洮到遼東的綿延萬里，從此始有「萬里長城」之稱。</p>
+<p>秦長城可大致分為西段和北段。西段起於今甘肅省岷縣，循洮河北至臨洮縣，經定西縣向東北至寧夏固原縣、甘肅環縣、陝西靖邊、橫山、榆林、神木，然後向北折至今內蒙古托克托南，抵黃河南岸。<br>北段即黃河以北的長城沿陰山西段的狼山，向東至大青山北麓，再向東經今內蒙集寧、興和至河北尚義，再向東北經今河北張北、圍場，再向東經撫順、本溪後向東南，終於朝鮮清川江入海處。</p>
+<p>在修築北方長城的同時，原諸侯國間用以「互防」的長城被拆毀：<br>「皇帝奮威，德並諸侯，初一泰平。墮壞城郭，決通川防，夷去險阻。」（《史記·秦始皇本紀》）<br>秦長城對於抵禦匈奴的騷擾，保障中原生產和生活的安定，起了重要的作用。</p>
+<p>秦始皇為了修築長城動用了$30$萬人，創造了人類建築史上的奇跡。</p>
+<p>這一繁重的修築工程，也給當時的人們帶來了極大的痛苦，孟姜女的故事便來源於此。<br>現在臨洮附近，陰山、大青山一線，都有秦長城遺跡殘存。</p>
+<p>回到那個時代，觀察到萬里長城的特色就是城牆一側總是一高一低的。</p>
+<p>而你就是建造長城的工程師，你希望你造的城牆越長越好，而建造城牆的建材是石頭，每塊石頭可能有不同的高度。</p>
+<p>但是供應石頭的廠商非常討厭，他每送一塊石頭就會問你要不要買，如果你不買，那塊就永遠不會再賣給你。</p>
+<p>而秦始皇更討厭，他規定你一買一塊石頭就要馬上用，而且一定要按照購買的順序建造。</p>
+<p>你透過一些內部的管道，得知廠商即將供應給你的石頭高度的順序，你能建造出多長的城牆呢？</p>
+<p>有幾點可能要注意一下：</p>
+<ol>
+<li>石頭不能疊起來，也不能躺下來，不然間隔的接縫會不整齊，秦始皇會不開心，然後把你『咻碰』！</li>
+<li>一定要滿足一塊高一塊低的方式，不然秦始皇會不開心，然後把你『咻碰』！</li>
+<li>城牆的兩側，一定要是比旁邊那塊還高，不然城牆會很醜，使得秦始皇不開心，然後把你『咻碰』！</li>
+<li>這家廠商相當的優質（因為不優質的話，秦始皇會不開心，然後把他『咻碰』！），每塊石頭的長寬都是一單位，只有高度不均。</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一眼覺得是LIS，對於每個值，維護以他為結尾最長的W形或M形序列(就是下一步要往上還是往下)，然後仿照LIS的做法做</p>
+<p>後來發現一個很greedy的性質，就是如果現在的數字沒辦法接在目前最長的序列之後，那就用它把結尾換掉顯然比較好，然後就沒了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,a,w=<span class="number">1</span>,m=<span class="number">0</span>,v,o;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a;</span><br><span class="line">	v=o=a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">		<span class="keyword">if</span>(a&lt;v&amp;&amp;w+<span class="number">1</span>&gt;m)&#123;</span><br><span class="line">			m=w+<span class="number">1</span>;</span><br><span class="line">			o=a;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(a&gt;o&amp;&amp;m+<span class="number">1</span>&gt;w)&#123;</span><br><span class="line">			w=m+<span class="number">1</span>;</span><br><span class="line">			v=a;</span><br><span class="line">		&#125;</span><br><span class="line">		o=<span class="built_in">min</span>(o,a);</span><br><span class="line">		v=<span class="built_in">max</span>(v,a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">max</span>(w,m<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1416.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1059,101 +1168,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1194.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1194.html" class="post-title-link" itemprop="url">TIOJ-1194</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-10 20:34:50" itemprop="dateCreated datePublished" datetime="2018-11-10T20:34:50Z">2018-11-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-10 12:58:38" itemprop="dateModified" datetime="2020-07-10T12:58:38Z">2020-07-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>908</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1194-搶因數遊戲"><a href="#1194-搶因數遊戲" class="headerlink" title="1194 . 搶因數遊戲"></a>1194 . 搶因數遊戲</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1194" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1194</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>「事情發生在跑跑卡恩車大賽後的幾個月…(請參考TIOJ-1022)，經過了跑跑卡恩車大賽後，原本居住在上城的寒酸員外老姜跟原本居住在下城強大的科學家老皮與老灝成為了好朋友，感情好到常常聚在一起打賭（賭友是嗎？）」<br>— TIOJ1162，小氣又有錢的老姜</p>
-<p>經過了許多次聚會後，他們已經把所有能賭的東西幾乎都賭過一遍了。於是他們決定要每個星期由一個人想一種新的遊戲方法來打賭。</p>
-<p>這次輪到老皮想規則，他想到了兩個遊戲規則：搶倍數遊戲和搶因數遊戲。兩個遊戲的玩法頗為類似，都是有$1$~$n$的數，雙方每次輪流拿掉一個數，當拿掉一個數的時候要同時拿掉它的所有倍數或所有因數(取決於是哪一套規則)，拿完的人就贏了。</p>
-<p>沒想到他剛很高興的把規則拿給老灝看，老灝就發現了搶倍數遊戲只要剛開始拿$1$就贏了……但是搶因數遊戲他們仍然找不出必勝的方法，於是便委託聰明的你幫忙寫個程式判斷哪一方有必勝策略。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>數學梗題</p>
-<p>答案是不管$n$是多少都先手必勝，因為我們可以用反證法，首先我們證如果有一個後手必勝的策略，那他顯然不包含拿掉$1$這個步驟，因為不管先手拿哪一個$1$都會被拿掉，所以後手絕對無法做這件事；然後假設$n=k$時是後手必勝，那先手就把$1$拿掉，換成對方先手我方使用後手必勝的戰略，由於此戰略不包含把$1$拿掉，所以是可執行的，那先手也贏了</p>
-<p>雖然很神奇可是應該可以用小測資看出來，這故事告訴我們構小測資的重要(?)</p>
-<p>不過這題沒有給$n$的範圍，看起來會爆<code>long long</code>，反正$n$一點都不重要所以拿<code>string</code>去吃它就好了</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&amp;&amp;s!=<span class="string">"0"</span>)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;t;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1223,7 +1237,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1236,7 +1250,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1280,12 +1294,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:17</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>

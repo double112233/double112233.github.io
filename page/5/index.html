@@ -197,6 +197,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1194.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Double Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Double的Code收藏區">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/TIOJ-1194.html" class="post-title-link" itemprop="url">TIOJ-1194</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-10 20:34:50" itemprop="dateCreated datePublished" datetime="2018-11-10T20:34:50Z">2018-11-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-10 12:58:38" itemprop="dateModified" datetime="2020-07-10T12:58:38Z">2020-07-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>908</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1194-搶因數遊戲"><a href="#1194-搶因數遊戲" class="headerlink" title="1194 . 搶因數遊戲"></a>1194 . 搶因數遊戲</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1194" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1194</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>「事情發生在跑跑卡恩車大賽後的幾個月…(請參考TIOJ-1022)，經過了跑跑卡恩車大賽後，原本居住在上城的寒酸員外老姜跟原本居住在下城強大的科學家老皮與老灝成為了好朋友，感情好到常常聚在一起打賭（賭友是嗎？）」<br>— TIOJ1162，小氣又有錢的老姜</p>
+<p>經過了許多次聚會後，他們已經把所有能賭的東西幾乎都賭過一遍了。於是他們決定要每個星期由一個人想一種新的遊戲方法來打賭。</p>
+<p>這次輪到老皮想規則，他想到了兩個遊戲規則：搶倍數遊戲和搶因數遊戲。兩個遊戲的玩法頗為類似，都是有$1$~$n$的數，雙方每次輪流拿掉一個數，當拿掉一個數的時候要同時拿掉它的所有倍數或所有因數(取決於是哪一套規則)，拿完的人就贏了。</p>
+<p>沒想到他剛很高興的把規則拿給老灝看，老灝就發現了搶倍數遊戲只要剛開始拿$1$就贏了……但是搶因數遊戲他們仍然找不出必勝的方法，於是便委託聰明的你幫忙寫個程式判斷哪一方有必勝策略。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>數學梗題</p>
+<p>答案是不管$n$是多少都先手必勝，因為我們可以用反證法，首先我們證如果有一個後手必勝的策略，那他顯然不包含拿掉$1$這個步驟，因為不管先手拿哪一個$1$都會被拿掉，所以後手絕對無法做這件事；然後假設$n=k$時是後手必勝，那先手就把$1$拿掉，換成對方先手我方使用後手必勝的戰略，由於此戰略不包含把$1$拿掉，所以是可執行的，那先手也贏了</p>
+<p>雖然很神奇可是應該可以用小測資看出來，這故事告訴我們構小測資的重要(?)</p>
+<p>不過這題沒有給$n$的範圍，看起來會爆<code>long long</code>，反正$n$一點都不重要所以拿<code>string</code>去吃它就好了</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s,t;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&amp;&amp;s!=<span class="string">"0"</span>)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;t;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1188.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1047,98 +1142,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://double112233.github.io/TIOJ-1126.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Double Wang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Double的Code收藏區">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/TIOJ-1126.html" class="post-title-link" itemprop="url">TIOJ-1126</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-11-04 10:39:12" itemprop="dateCreated datePublished" datetime="2018-11-04T10:39:12Z">2018-11-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 12:45:22" itemprop="dateModified" datetime="2020-06-28T12:45:22Z">2020-06-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Competitive-Programming/" itemprop="url" rel="index"><span itemprop="name">程式競賽</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>772</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1126-尋找對稱字串"><a href="#1126-尋找對稱字串" class="headerlink" title="1126 . 尋找對稱字串"></a>1126 . 尋找對稱字串</h1><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p><a href="https://tioj.ck.tp.edu.tw/problems/1126" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1126</a></p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>若一個字串無論是從左至右讀，或者是從右至左讀，都獲得相同的結果，則我們稱此字串為對稱字串。舉例來說，absba便是一個對稱字串。</p>
-<p>對於任何一個字串而言，該字串可能包含有對稱的部份，稱之為對稱子字串。以字串mississippi為例，此字串有多個對稱子字串，如ississi以及ippi等，且其中以ississi為最長的對稱子字串，其長度為$7$。</p>
-<p>請寫出一個程式可以找出一字串內的最長對稱子字串之長度。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>看到這題本來想說「喔這就枚舉對稱點嘛」，看到值域「字串長度不超過$30$」……</p>
-<p>上古時期的北市賽根本水箭龜，暴力都會過= =</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s)&#123;</span><br><span class="line">		<span class="keyword">int</span> maxu=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i+maxu;j&lt;s.length();j++)&#123;</span><br><span class="line">				<span class="keyword">bool</span> ok=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=j-i;k++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(s[i+k]!=s[j-k])&#123;</span><br><span class="line">						ok=<span class="literal">false</span>;</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(ok)</span><br><span class="line">					maxu=<span class="built_in">max</span>(maxu,j-i+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;maxu&lt;&lt;<span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1208,7 +1211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1221,7 +1224,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">61</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1265,12 +1268,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">84k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:17</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
